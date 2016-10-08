@@ -7,7 +7,7 @@
 
 # Site settings
 title: Xiaohan Zhang
-email: xiaohan.zhang14@gmail.com
+email: xiaohanzhang14@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Xiaohan builds a website. Buttery and smooth, always.
 baseurl: "" # the subpath of your site, e.g. /blog
