@@ -2,22 +2,27 @@
 layout: default
 ---
 
-<div class="home">
+<div class='home'>
+  <h1>Xiaohan is currently:</h1>
 
-  <h1 class="page-heading">Posts</h1>
+  <div class='home-content'>
+    <h2>Smattering of Things</h2>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+    <div class='home-feature'>
+      <ul class="post-list">
+        <a href='/rotation'><h3>Rotation</h3></a>
+        <a href='weather'><h3>Weather</h3></a>
+        <h3>Posts Placeholder</h3>
+        {% for post in site.posts %}
+          <li>
+            <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
+            <h2>
+              <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+            </h2>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
 </div>

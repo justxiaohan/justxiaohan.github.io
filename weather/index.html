@@ -1,0 +1,59 @@
+---
+layout: page
+---
+
+<div class='container'>
+
+	<div class='weathercontainer'>
+		<h1>Check the Weather!</h1>
+
+		<h2 id='geolocation'>Currently in</h2>
+			<div id='date'></div>
+
+			<section class = 'day'>
+				<div id='tempwrapper'>
+					<canvas id ='iconcontainer' width='64' height='64'></canvas>
+					<div id='temp'></div>
+				</div>
+				<div id='feels'></div>
+				<div id='precipp'></div>
+			</section>
+
+		<div id='forecastwrapper'>
+		<h2>Forecast</h2>
+			<section class = 'dayHour'>
+				<div id = 'timeOne'></div>
+				<canvas id = 'dayOneHourContainer' width='64' height ='64'></canvas>
+				<div id ='tempOne'></div>
+			</section>
+			<section class = 'dayHour'>
+				<div id = 'timeTwo'></div>
+				<canvas id = 'dayTwoHourContainer' width='64' height ='64'></canvas>
+				<div id ='tempTwo'></div>
+			</section>
+			<section class = 'dayHour'>
+				<div id = 'timeThree'></div>
+				<canvas id = 'dayThreeHourContainer' width='64' height ='64'></canvas>
+				<div id ='tempThree'></div>
+			</section>
+			<section class = 'dayHour'>
+				<div id = 'timeFour'></div>
+				<canvas id = 'dayFourHourContainer' width='64' height ='64'></canvas>
+				<div id ='tempFour'></div>
+			</section>
+			<section class = 'dayHour'>
+				<div id = 'timeFive'></div>
+				<canvas id = 'dayFiveHourContainer' width='64' height ='64'></canvas>
+				<div id ='tempFive'></div>
+			</section>
+			<section class = 'dayHour'>
+				<div id = 'timeSix'></div>
+				<canvas id = 'daySixHourContainer' width='64' height ='64'></canvas>
+				<div id ='tempSix'></div>
+			</section>
+		</div>
+	</div>
+
+	<script async src='time.js'></script>
+	<script async src='weather.js'></script>
+	<script async src='skycons.js'></script>
