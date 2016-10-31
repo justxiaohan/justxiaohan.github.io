@@ -10,6 +10,11 @@
     position: relative;
 }
 
+.header-item {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
 .site-title {
     font-size: 26px;
     font-weight: 300;
@@ -162,7 +167,15 @@
     }
 }
 
-
+/**
+ * Homepage content
+ */
+.home-hero {
+    background-color: #F0EAD6;
+    height: 500px;
+    display: flex;
+    align-items: center;
+}
 
 /**
  * Page content

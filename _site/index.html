@@ -14,8 +14,11 @@
   <link rel="canonical" href="http://butterytoast.com/">
   <link rel="alternate" type="application/rss+xml" title="Xiaohan Zhang" href="http://butterytoast.com/feed.xml">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" />
+  <script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
   <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
 
 
@@ -41,9 +44,8 @@
       <div class="trigger">
         
           
-          <a class="site-title" href="/projects">Projects</a>
-          <a class="site-title" href="/about">About</a>
-          <a class="site-title" href="mailto:xiaohanzhang14@gmail.com">Contact</a>
+          <a class="site-title header-item" href="/projects">Projects</a>
+          <a class="site-title header-item" href="/about">About</a>
           
         
           
@@ -66,16 +68,18 @@
     <div class="page-content">
       <div class="wrapper">
         <div class='home'>
-  <h1>Xiaohan is currently<span id='doing'></span></h1>
+  <div class='home-hero'>
+    <h1>Xiaohan is currently<span id='doing'></span></h1>
+  </div>
 
   <div class='home-content'>
     <h2>Smattering of Things</h2>
 
     <div class='home-feature'>
-      <div class='home-feature-item'>
+      <div class='home-feature-item col-md-6'>
         <a href='/rotation'><h3>Rotation</h3></a>
       </div>
-      <div class='home-feature-item'>
+      <div class='home-feature-item col-md-6'>
         <a href='weather'><h3>Weather</h3></a>
       </div>
 <!--code for posts
