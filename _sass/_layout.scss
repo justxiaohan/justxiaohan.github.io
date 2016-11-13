@@ -2,9 +2,9 @@
  * Site header
  */
 .site-header {
-    border-top: 5px solid $grey-color-dark;
     border-bottom: 1px solid $grey-color-light;
     min-height: 56px;
+    background-color: $background-color;
 
     // Positioning context for the mobile navigation icon
     position: relative;
@@ -170,12 +170,38 @@
 /**
  * Homepage content
  */
-.home-hero {
-    background-color: #F0EAD6;
-    height: 500px;
-    display: flex;
-    align-items: center;
+.home {
+    background-color: $background-color;
 }
+
+    .home-hero {
+        height: 400px;
+        display: flex;
+        align-items: center;
+    }
+
+    .home-content {
+        overflow: auto;
+    }
+
+    .home-item {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        overflow: auto;
+    }
+
+    .home-feature {
+        display: flex;
+        align-items: center;
+        min-height: 250px;
+        width: 100%;
+        background-color: $brand-color;
+    }
+
+    .home-feature:hover {
+        opacity: 0.9;
+    }
 
 /**
  * Page content

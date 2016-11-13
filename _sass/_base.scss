@@ -25,6 +25,15 @@ body {
     font-kerning: normal;
 }
 
+.page-content {
+    background-color: $background-color;
+}
+
+.no-padding {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
 
 
 /**
@@ -85,7 +94,14 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: $base-font-weight;
 }
 
-
+/**
+ * Body and Text
+ */
+p, div {
+    font-family: $body-font-family;
+    font-weight: $body-font-weight;
+    font-size: $body-font-size;
+}
 
 /**
  * Links
@@ -163,6 +179,8 @@ pre {
     padding-right: $spacing-unit;
     padding-left: $spacing-unit;
     @extend %clearfix;
+    background-color: $background-color;
+    font-family: $base-font-family;
 
     @include media-query($on-laptop) {
         max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
