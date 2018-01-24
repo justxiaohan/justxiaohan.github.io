@@ -276,13 +276,14 @@
 
 .grid-container.trip {
     display: grid;
-    grid-template: 200px 200px / repeat(auto-fill, minmax(200px, 2fr));
+    grid-template: 200px 200px / repeat(auto-fit, minmax(200px, 2fr));
     grid-gap: 20px;
     grid-auto-rows: 200px;
+    grid-auto-flow: dense;
 }
 
 .grid-container.trip > div:nth-child(1n) {
-  background-color: #96ceb4;    
+  background-color: #96ceb4;
 }
 
 .grid-container.trip > div:nth-child(3n) {
@@ -296,6 +297,21 @@
 .grid-container.trip > div:nth-child(4n) {
   background-color: #ffcc5c;
 }
+
+/**
+ * Header
+ */
+.grid-item.header * {
+  display: inline;
+}
+
+/**
+ * Footer
+ */
+.grid-item.footer * {
+  display: inline;
+}
+
 /**
  * Posts
  */

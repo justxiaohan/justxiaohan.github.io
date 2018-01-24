@@ -1,58 +1,30 @@
-<!DOCTYPE html>
-<html>
+---
+layout: default
+---
 
-<head>
-  <link rel="stylesheet" type="text/css" href="/css/main.css">
-</head>
-
-<body>
-
-	<div class="grid-container">
-
-    <div class="grid-item header">
-      <div>Xiaohan Zhang</div>
-      <div>Projects</div>
-      <div>Notes</div>
-      <div>About</div>
-    </div>
-
-    <div class="grid-item body">
-      <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lulu_0.jpg"></img>
-      <h1>Hi, I'm Xiaohan</h1>
-      <div>
-        I work on product growth. I made this website to learn how to make things on the world wide web and to share my adventures with you.
-      </div>
-      <div>
-          {% if site.posts.size > 0 %}
-          <h2 class="post-list-heading">{{ page.list_title | default: "Latest Notes" }}</h2>
-            <ul class="post-list">
-              {% for post in site.posts %}
-                <li>
-                  {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-                  <span class="post-meta">{{ post.date | date: date_format }}</span>
-
-                  <h3>
-                    <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-                  </h3>
-                </li>
-              {% endfor %}
-            </ul>
-
-            <p><a href="{{ "/blog" | relative_url }}">see more</a></p>
-          {% endif %}
-      </div>
-      <div>
-        <h2>Projects I'm Proud Of</h2>
-      </div>
-    </div>
-
-    <div class="grid-item footer">
-      <div>2018</div>
-      <div>link to something of mine</div>
-    </div>
-
+<div class="grid-item body">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lulu_0.jpg"></img>
+  <h1>Hi, I'm Xiaohan</h1>
+  <div>
+    I work on product growth. I made this website to learn how to make things on the world wide web and to share my adventures with you.
   </div>
-</body>
+  <div>
+      {% if site.posts.size > 0 %}
+      <h2 class="post-list-heading">{{ page.list_title | default: "Latest Notes" }}</h2>
+        <ul class="post-list">
+          {% for post in site.posts %}
+            <li>
+              {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+              <span class="post-meta">{{ post.date | date: date_format }}</span>
 
+              <h3>
+                <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+              </h3>
+            </li>
+          {% endfor %}
+        </ul>
 
-</html>
+        <p><a href="{{ "/blog" | relative_url }}">see more</a></p>
+      {% endif %}
+  </div>
+</div>
