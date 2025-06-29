@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>My PhotoSwipe Gallery</title>
+        <title>Gallery</title>
 
         <!-- PhotoSwipe CSS -->
         <link
@@ -19,141 +19,235 @@
             }
 
             body {
-                font-family: "Arial", sans-serif;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                min-height: 100vh;
-                padding: 20px;
+                font-family:
+                    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+                    sans-serif;
+                line-height: 1.6;
+                color: #000;
+                background: #fff;
+                font-size: 16px;
+                letter-spacing: -0.01em;
             }
 
             .container {
-                max-width: 1200px;
+                max-width: 1400px;
                 margin: 0 auto;
-                background: rgba(255, 255, 255, 0.95);
-                border-radius: 20px;
-                padding: 40px;
-                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-                backdrop-filter: blur(10px);
+                padding: 0 20px;
             }
 
-            h1 {
+            /* Header */
+            .header {
+                padding: 60px 0 40px;
                 text-align: center;
-                color: #333;
-                margin-bottom: 40px;
-                font-size: 2.5em;
-                background: linear-gradient(45deg, #667eea, #764ba2);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
+                border-bottom: 1px solid #e8e8e8;
+                margin-bottom: 60px;
             }
 
+            .header h1 {
+                font-size: 2.5rem;
+                font-weight: 400;
+                margin-bottom: 20px;
+                letter-spacing: -0.02em;
+            }
+
+            .header p {
+                font-size: 1.1rem;
+                color: #666;
+                font-weight: 300;
+                max-width: 600px;
+                margin: 0 auto 30px;
+            }
+
+            .contact-info {
+                font-size: 0.95rem;
+                color: #888;
+            }
+
+            .contact-info a {
+                color: #000;
+                text-decoration: none;
+                border-bottom: 1px solid transparent;
+                transition: border-bottom 0.2s ease;
+            }
+
+            .contact-info a:hover {
+                border-bottom: 1px solid #000;
+            }
+
+            /* Gallery Grid */
             .gallery {
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-                gap: 20px;
-                margin-bottom: 40px;
+                grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+                gap: 2px;
+                margin-bottom: 80px;
             }
 
             .gallery-item {
                 position: relative;
                 overflow: hidden;
-                border-radius: 12px;
                 cursor: pointer;
-                transition: all 0.3s ease;
-                background: #f8f9fa;
-                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+                aspect-ratio: 4/3;
+                background: #f8f8f8;
+                transition: opacity 0.3s ease;
             }
 
             .gallery-item:hover {
-                transform: translateY(-8px);
-                box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+                opacity: 0.85;
             }
 
             .gallery-item img {
                 width: 100%;
-                height: 250px;
+                height: 100%;
                 object-fit: cover;
-                transition: transform 0.3s ease;
+                display: block;
+                transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             }
 
             .gallery-item:hover img {
-                transform: scale(1.05);
+                transform: scale(1.03);
             }
 
-            .gallery-overlay {
+            /* Image Overlay - Hidden by default, minimal when shown */
+            .image-overlay {
                 position: absolute;
                 bottom: 0;
                 left: 0;
                 right: 0;
-                background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+                background: linear-gradient(transparent, rgba(0, 0, 0, 0.4));
                 color: white;
-                padding: 20px;
-                transform: translateY(100%);
-                transition: transform 0.3s ease;
+                padding: 30px 20px 20px;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+                font-size: 0.9rem;
+                font-weight: 300;
             }
 
-            .gallery-item:hover .gallery-overlay {
-                transform: translateY(0);
+            .gallery-item:hover .image-overlay {
+                opacity: 1;
             }
 
-            .gallery-title {
-                font-weight: bold;
-                margin-bottom: 5px;
-            }
-
-            .gallery-description {
-                font-size: 0.9em;
-                opacity: 0.9;
-            }
-
-            .instructions {
-                text-align: center;
-                color: #666;
-                font-size: 1.1em;
-                margin-bottom: 20px;
-                padding: 20px;
-                background: rgba(102, 126, 234, 0.1);
-                border-radius: 10px;
-                border-left: 4px solid #667eea;
-            }
-
+            /* Footer */
             .footer {
                 text-align: center;
-                margin-top: 40px;
-                padding-top: 20px;
-                border-top: 1px solid #eee;
+                padding: 60px 0;
+                border-top: 1px solid #e8e8e8;
+                font-size: 0.9rem;
                 color: #888;
             }
 
+            .back-to-top {
+                display: inline-block;
+                margin-top: 20px;
+                color: #000;
+                text-decoration: none;
+                font-weight: 400;
+                transition: transform 0.2s ease;
+            }
+
+            .back-to-top:hover {
+                transform: translateY(-2px);
+            }
+
+            /* Mobile Responsiveness */
             @media (max-width: 768px) {
                 .container {
-                    padding: 20px;
-                    margin: 10px;
+                    padding: 0 15px;
                 }
 
-                h1 {
-                    font-size: 2em;
+                .header {
+                    padding: 40px 0 30px;
+                    margin-bottom: 40px;
+                }
+
+                .header h1 {
+                    font-size: 2rem;
+                }
+
+                .header p {
+                    font-size: 1rem;
                 }
 
                 .gallery {
                     grid-template-columns: 1fr;
+                    gap: 1px;
+                    margin-bottom: 60px;
+                }
+
+                .gallery-item {
+                    min-height: 300px;
+                }
+
+                .footer {
+                    padding: 40px 0;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .header h1 {
+                    font-size: 1.8rem;
+                }
+
+                .contact-info {
+                    font-size: 0.9rem;
+                }
+            }
+
+            /* Large screens */
+            @media (min-width: 1200px) {
+                .gallery {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+            }
+
+            @media (min-width: 1600px) {
+                .gallery {
+                    grid-template-columns: repeat(4, 1fr);
+                }
+            }
+
+            /* Custom PhotoSwipe styling to match minimal aesthetic */
+            .pswp__bg {
+                background: #fff !important;
+            }
+
+            .pswp__ui {
+                color: #000 !important;
+            }
+
+            .pswp__top-bar {
+                background: rgba(255, 255, 255, 0.9) !important;
+                backdrop-filter: blur(10px);
+            }
+
+            /* Loading animation */
+            .loading {
+                opacity: 0;
+                animation: fadeIn 0.5s ease forwards;
+            }
+
+            @keyframes fadeIn {
+                to {
+                    opacity: 1;
                 }
             }
         </style>
     </head>
     <body>
         <div class="container">
-            <h1>✨ My PhotoSwipe Gallery ✨</h1>
+            <header class="header">
+                <h1>Gallery</h1>
+                <p>
+                    A curated collection of visual stories capturing moments of
+                    beauty, emotion, and authentic human experience.
+                </p>
+                <div class="contact-info">
+                    <a href="mailto:work@example.com">work@example.com</a>
+                    |
+                    <a href="#" target="_blank">@gallery</a>
+                </div>
+            </header>
 
-            <div class="instructions">
-                <strong
-                    >Click on any image to open the full-screen gallery
-                    experience!</strong
-                ><br />
-                Use arrow keys, swipe gestures, or navigation buttons to browse
-                through the images.
-            </div>
-
-            <div class="gallery" id="gallery">
+            <div class="gallery loading" id="gallery">
                 <div
                     class="gallery-item"
                     data-pswp-width="1920"
@@ -161,14 +255,9 @@
                 >
                     <img
                         src="https://picsum.photos/1920/1080?random=1"
-                        alt="Beautiful Landscape"
+                        alt="Mountain landscape at golden hour"
                     />
-                    <div class="gallery-overlay">
-                        <div class="gallery-title">Serene Mountain Vista</div>
-                        <div class="gallery-description">
-                            A breathtaking view of misty mountains at sunrise
-                        </div>
-                    </div>
+                    <div class="image-overlay">Mountain Vista, 2024</div>
                 </div>
 
                 <div
@@ -178,14 +267,9 @@
                 >
                     <img
                         src="https://picsum.photos/1920/1280?random=2"
-                        alt="Ocean Waves"
+                        alt="Ocean waves meeting the shore"
                     />
-                    <div class="gallery-overlay">
-                        <div class="gallery-title">Ocean Dreams</div>
-                        <div class="gallery-description">
-                            Powerful waves crashing against rocky shores
-                        </div>
-                    </div>
+                    <div class="image-overlay">Coastal Reflections, 2024</div>
                 </div>
 
                 <div
@@ -195,14 +279,9 @@
                 >
                     <img
                         src="https://picsum.photos/1920/1200?random=3"
-                        alt="Forest Path"
+                        alt="Forest path through morning mist"
                     />
-                    <div class="gallery-overlay">
-                        <div class="gallery-title">Enchanted Forest</div>
-                        <div class="gallery-description">
-                            A mysterious path winding through ancient trees
-                        </div>
-                    </div>
+                    <div class="image-overlay">Morning Path, 2024</div>
                 </div>
 
                 <div
@@ -212,14 +291,9 @@
                 >
                     <img
                         src="https://picsum.photos/1920/1080?random=4"
-                        alt="City Skyline"
+                        alt="Urban architecture and light"
                     />
-                    <div class="gallery-overlay">
-                        <div class="gallery-title">Urban Lights</div>
-                        <div class="gallery-description">
-                            City skyline illuminated against the twilight sky
-                        </div>
-                    </div>
+                    <div class="image-overlay">Urban Studies, 2024</div>
                 </div>
 
                 <div
@@ -229,27 +303,28 @@
                 >
                     <img
                         src="https://picsum.photos/1920/1440?random=5"
-                        alt="Desert Sunset"
+                        alt="Desert landscape at sunset"
                     />
-                    <div class="gallery-overlay">
-                        <div class="gallery-title">Desert Solitude</div>
-                        <div class="gallery-description">
-                            Golden sand dunes bathed in warm sunset light
-                        </div>
-                    </div>
+                    <div class="image-overlay">Desert Light, 2024</div>
+                </div>
+
+                <div
+                    class="gallery-item"
+                    data-pswp-width="1920"
+                    data-pswp-height="1080"
+                >
+                    <img
+                        src="https://picsum.photos/1920/1080?random=6"
+                        alt="Abstract architectural detail"
+                    />
+                    <div class="image-overlay">Form & Function, 2024</div>
                 </div>
             </div>
 
-            <div class="footer">
-                <p>
-                    Powered by <strong>PhotoSwipe</strong> • Beautiful images
-                    from <strong>Picsum</strong>
-                </p>
-                <p>
-                    Click, swipe, or use keyboard arrows to navigate • Press ESC
-                    to close
-                </p>
-            </div>
+            <footer class="footer">
+                <p>All images © 2024. Click any image to view full size.</p>
+                <a href="#" class="back-to-top">↑ Back to Top</a>
+            </footer>
         </div>
 
         <!-- PhotoSwipe JavaScript -->
@@ -257,101 +332,90 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/photoswipe-lightbox.min.js"></script>
 
         <script>
-            // Initialize PhotoSwipe
+            // Initialize PhotoSwipe with minimal UI
             const lightbox = new PhotoSwipeLightbox({
                 gallery: "#gallery",
                 children: ".gallery-item",
                 pswpModule: PhotoSwipe,
 
-                // Options
-                bgOpacity: 0.9,
-                showHideAnimationType: "zoom",
+                // Minimal, clean options
+                bgOpacity: 1,
+                showHideAnimationType: "fade",
 
-                // Enable zoom
-                allowPanToNext: false,
+                // UI customization for minimal look
+                closeTitle: "Close",
+                zoomTitle: "Zoom",
+                arrowPrevTitle: "Previous",
+                arrowNextTitle: "Next",
 
-                // UI elements
-                closeTitle: "Close (Esc)",
-                zoomTitle: "Zoom in/out",
-                arrowPrevTitle: "Previous (arrow left)",
-                arrowNextTitle: "Next (arrow right)",
-
-                // Additional options
+                // Interaction options
                 wheelToZoom: true,
                 pinchToClose: false,
                 closeOnVerticalDrag: true,
-
-                // Custom styling
-                bgOpacity: 0.95,
-                spacing: 0.1,
                 allowPanToNext: true,
                 loop: true,
 
-                // Animation settings
-                showAnimationDuration: 333,
-                hideAnimationDuration: 333,
+                // Smooth animations
+                showAnimationDuration: 400,
+                hideAnimationDuration: 400,
 
-                // Add custom buttons
-                appendToEl: document.body,
-
-                // Image loading options
+                // Preloading
                 preload: [1, 2],
 
                 // Error handling
-                errorMsg: "The image could not be loaded.",
+                errorMsg: "Image cannot be loaded",
             });
 
-            // Add custom event listeners
-            lightbox.on("change", () => {
-                console.log("Slide changed");
-            });
-
-            lightbox.on("afterInit", () => {
-                console.log("PhotoSwipe initialized");
-            });
-
-            // Add download functionality
+            // Custom image data handling
             lightbox.addFilter("itemData", (itemData, index) => {
                 const img =
                     document.querySelectorAll(".gallery-item img")[index];
                 return {
-                    src: img.src.replace("?random=", "?download&random="),
+                    src: img.src,
                     width: parseInt(itemData.element.dataset.pswpWidth),
                     height: parseInt(itemData.element.dataset.pswpHeight),
                     alt: img.alt,
                 };
             });
 
-            // Initialize the lightbox
+            // Initialize
             lightbox.init();
 
-            // Add some interactive effects
-            document.querySelectorAll(".gallery-item").forEach((item) => {
-                item.addEventListener("mouseenter", () => {
-                    item.style.transform = "translateY(-8px) scale(1.02)";
+            // Smooth scroll for back to top
+            document
+                .querySelector(".back-to-top")
+                .addEventListener("click", (e) => {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth",
+                    });
                 });
 
-                item.addEventListener("mouseleave", () => {
-                    item.style.transform = "translateY(0) scale(1)";
+            // Lazy loading effect
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("loading");
+                    }
                 });
             });
 
-            // Add keyboard navigation hint
+            document.querySelectorAll(".gallery-item").forEach((item) => {
+                observer.observe(item);
+            });
+
+            // Keyboard shortcuts
             document.addEventListener("keydown", (e) => {
-                if (e.key === "?" || e.key === "h") {
-                    alert(
-                        "PhotoSwipe Gallery Help:\n\n" +
-                            "• Click any image to open gallery\n" +
-                            "• Use arrow keys or swipe to navigate\n" +
-                            "• Press ESC to close\n" +
-                            "• Use mouse wheel to zoom\n" +
-                            "• Double-click to zoom in/out",
-                    );
+                if (e.key === "g" && !e.target.matches("input, textarea")) {
+                    e.preventDefault();
+                    document.querySelector(".gallery").scrollIntoView({
+                        behavior: "smooth",
+                    });
                 }
             });
 
-            console.log("🎉 PhotoSwipe Gallery loaded successfully!");
-            console.log('💡 Press "?" or "h" for help');
+            console.log('Gallery loaded • Press "g" to jump to gallery');
         </script>
     </body>
 </html>
