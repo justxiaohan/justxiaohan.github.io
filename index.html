@@ -4,8 +4,6 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Gallery</title>
-
-        <!-- PhotoSwipe CSS -->
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/photoswipe.min.css"
@@ -20,7 +18,7 @@
 
             body {
                 font-family:
-                    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+                    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
                     sans-serif;
                 line-height: 1.6;
                 color: #000;
@@ -35,7 +33,6 @@
                 padding: 0 20px;
             }
 
-            /* Header */
             .header {
                 padding: 60px 0 40px;
                 text-align: center;
@@ -74,7 +71,6 @@
                 border-bottom: 1px solid #000;
             }
 
-            /* Gallery Container */
             .gallery {
                 margin-bottom: 80px;
                 opacity: 0;
@@ -85,12 +81,11 @@
                 opacity: 1;
             }
 
-            /* Gallery Rows */
             .gallery-row {
                 display: flex;
                 gap: 7px;
                 margin-bottom: 7px;
-                height: 400px; /* Initial height, will be updated by JS */
+                height: 400px;
             }
 
             .gallery-item {
@@ -99,7 +94,6 @@
                 cursor: pointer;
                 background: #f8f8f8;
                 transition: opacity 0.3s ease;
-                /* Width will be set dynamically by JS based on aspect ratio */
             }
 
             .gallery-item:hover {
@@ -118,7 +112,6 @@
                 transform: scale(1.03);
             }
 
-            /* Image Overlay */
             .image-overlay {
                 position: absolute;
                 bottom: 0;
@@ -137,7 +130,6 @@
                 opacity: 1;
             }
 
-            /* Loading state */
             .gallery-item.loading {
                 background: #f0f0f0;
                 animation: pulse 1.5s ease-in-out infinite;
@@ -153,7 +145,6 @@
                 }
             }
 
-            /* Footer */
             .footer {
                 text-align: center;
                 padding: 60px 0;
@@ -175,59 +166,129 @@
                 transform: translateY(-2px);
             }
 
-            /* Mobile Responsiveness */
+            /* Responsive Design */
+            @media (max-width: 1024px) {
+                .container {
+                    padding: 0 16px;
+                }
+                .header {
+                    padding: 50px 0 35px;
+                    margin-bottom: 50px;
+                }
+                .header h1 {
+                    font-size: 2.2rem;
+                }
+                .gallery-row {
+                    height: 350px;
+                }
+            }
+
             @media (max-width: 768px) {
                 .container {
                     padding: 0 15px;
                 }
-
                 .header {
                     padding: 40px 0 30px;
                     margin-bottom: 40px;
                 }
-
                 .header h1 {
                     font-size: 2rem;
                 }
-
                 .header p {
                     font-size: 1rem;
                 }
+                .footer {
+                    padding: 40px 0;
+                }
 
                 .gallery-row {
-                    flex-direction: column;
+                    display: block;
                     height: auto;
+                    margin-bottom: 0;
+                    gap: 0;
                 }
 
                 .gallery-item {
-                    height: 300px;
+                    display: block;
                     width: 100% !important;
+                    height: auto !important;
+                    margin-bottom: 15px;
+                    flex: none !important;
                 }
 
-                .footer {
-                    padding: 40px 0;
+                .gallery-row:last-child .gallery-item:last-child {
+                    margin-bottom: 0;
+                }
+
+                .gallery-item img {
+                    width: 100%;
+                    height: auto;
+                    object-fit: contain;
+                    object-position: center;
+                }
+
+                .gallery-item:hover {
+                    opacity: 1;
+                }
+                .gallery-item:hover img {
+                    transform: none;
+                }
+                .image-overlay {
+                    display: none;
                 }
             }
 
             @media (max-width: 480px) {
+                .container {
+                    padding: 0 12px;
+                }
+                .header {
+                    padding: 30px 0 25px;
+                    margin-bottom: 30px;
+                }
                 .header h1 {
                     font-size: 1.8rem;
                 }
-
+                .header p {
+                    font-size: 0.95rem;
+                }
                 .contact-info {
                     font-size: 0.9rem;
                 }
+                .gallery-item {
+                    margin-bottom: 12px;
+                }
+                .footer {
+                    padding: 30px 0;
+                    font-size: 0.85rem;
+                }
             }
 
-            /* Custom PhotoSwipe styling */
+            @media (max-width: 360px) {
+                .container {
+                    padding: 0 10px;
+                }
+                .header h1 {
+                    font-size: 1.6rem;
+                }
+                .header p {
+                    font-size: 0.9rem;
+                }
+                .contact-info {
+                    font-size: 0.85rem;
+                }
+                .gallery-item {
+                    margin-bottom: 10px;
+                }
+            }
+
+            /* PhotoSwipe Custom Styling */
             .pswp__bg {
                 background: #fff !important;
             }
-
             .pswp__ui {
                 color: #000 !important;
             }
-
             .pswp__top-bar {
                 background: rgba(255, 255, 255, 0.9) !important;
                 backdrop-filter: blur(10px);
@@ -240,8 +301,8 @@
                 <h1>Xiaohan Zhang</h1>
                 <p>Learning how to take photos</p>
                 <div class="contact-info">
-                    <a href="mailto:xiaohan.zhang14gmail.com"
-                        >xiaohan.zhang14gmail.com</a
+                    <a href="mailto:xiaohan.zhang14@gmail.com"
+                        >xiaohan.zhang14@gmail.com</a
                     >
                     |
                     <a
@@ -252,135 +313,7 @@
                 </div>
             </header>
 
-            <div class="gallery" id="gallery">
-                <!-- Row 1: 2 images -->
-                <div class="gallery-row">
-                    <div
-                        class="gallery-item loading"
-                        data-pswp-width="1920"
-                        data-pswp-height="1080"
-                    >
-                        <img
-                            src="./images/IMG_9503.jpeg"
-                            alt="Mountain landscape at golden hour"
-                        />
-                        <div class="image-overlay">Mountain Vista, 2024</div>
-                    </div>
-                    <div
-                        class="gallery-item loading"
-                        data-pswp-width="1920"
-                        data-pswp-height="1280"
-                    >
-                        <img
-                            src="https://picsum.photos/1920/1280?random=2"
-                            alt="Ocean waves meeting the shore"
-                        />
-                        <div class="image-overlay">
-                            Coastal Reflections, 2024
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Row 2: 3 images -->
-                <div class="gallery-row">
-                    <div
-                        class="gallery-item loading"
-                        data-pswp-width="1920"
-                        data-pswp-height="1200"
-                    >
-                        <img
-                            src="https://picsum.photos/1920/1200?random=3"
-                            alt="Forest path through morning mist"
-                        />
-                        <div class="image-overlay">Morning Path, 2024</div>
-                    </div>
-                    <div
-                        class="gallery-item loading"
-                        data-pswp-width="1920"
-                        data-pswp-height="1080"
-                    >
-                        <img
-                            src="https://picsum.photos/1920/1080?random=4"
-                            alt="Urban architecture and light"
-                        />
-                        <div class="image-overlay">Urban Studies, 2024</div>
-                    </div>
-                    <div
-                        class="gallery-item loading"
-                        data-pswp-width="1920"
-                        data-pswp-height="1440"
-                    >
-                        <img
-                            src="https://picsum.photos/1920/1440?random=5"
-                            alt="Desert landscape at sunset"
-                        />
-                        <div class="image-overlay">Desert Light, 2024</div>
-                    </div>
-                </div>
-
-                <!-- Row 3: 1 large image -->
-                <div class="gallery-row">
-                    <div
-                        class="gallery-item loading"
-                        data-pswp-width="1920"
-                        data-pswp-height="1080"
-                    >
-                        <img
-                            src="https://picsum.photos/1920/1080?random=6"
-                            alt="Abstract architectural detail"
-                        />
-                        <div class="image-overlay">Form & Function, 2024</div>
-                    </div>
-                </div>
-
-                <!-- Row 4: 4 images -->
-                <div class="gallery-row">
-                    <div
-                        class="gallery-item loading"
-                        data-pswp-width="1920"
-                        data-pswp-height="1080"
-                    >
-                        <img
-                            src="https://picsum.photos/1920/1080?random=7"
-                            alt="Street photography"
-                        />
-                        <div class="image-overlay">Street Life, 2024</div>
-                    </div>
-                    <div
-                        class="gallery-item loading"
-                        data-pswp-width="1920"
-                        data-pswp-height="1280"
-                    >
-                        <img
-                            src="https://picsum.photos/1920/1280?random=8"
-                            alt="Portrait study"
-                        />
-                        <div class="image-overlay">Portrait, 2024</div>
-                    </div>
-                    <div
-                        class="gallery-item loading"
-                        data-pswp-width="1920"
-                        data-pswp-height="1200"
-                    >
-                        <img
-                            src="https://picsum.photos/1920/1200?random=9"
-                            alt="Nature close-up"
-                        />
-                        <div class="image-overlay">Nature Study, 2024</div>
-                    </div>
-                    <div
-                        class="gallery-item loading"
-                        data-pswp-width="1920"
-                        data-pswp-height="1080"
-                    >
-                        <img
-                            src="https://picsum.photos/1920/1080?random=10"
-                            alt="Architectural detail"
-                        />
-                        <div class="image-overlay">Architecture, 2024</div>
-                    </div>
-                </div>
-            </div>
+            <div class="gallery" id="gallery"></div>
 
             <footer class="footer">
                 <p>
@@ -391,16 +324,110 @@
             </footer>
         </div>
 
-        <!-- PhotoSwipe JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/photoswipe.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/photoswipe-lightbox.min.js"></script>
 
         <script>
             // Configuration
-            const TARGET_HEIGHT = 400; // Target height for rows (can be adjusted)
-            const GAP = 7; // Gap between images
+            const TARGET_HEIGHT = 400;
+            const GAP = 7;
+            const ROW_PATTERN = [3, 2, 4, 2, 3, 2, 4, 4];
 
-            // Function to load image and get dimensions
+            const IMAGES = [
+                { src: "./images/image_1.jpeg", alt: "", title: "" },
+                { src: "./images/image_2.jpeg", alt: "", title: "" },
+                { src: "./images/image_3.jpeg", alt: "", title: "" },
+                { src: "./images/image_4.jpeg", alt: "", title: "" },
+                { src: "./images/image_5.jpeg", alt: "", title: "" },
+                { src: "./images/image_6.jpeg", alt: "", title: "" },
+                { src: "./images/image_7.jpeg", alt: "", title: "" },
+                { src: "./images/image_8.jpeg", alt: "", title: "" },
+                { src: "./images/image_9.jpeg", alt: "", title: "" },
+                { src: "./images/image_10.jpeg", alt: "", title: "" },
+                { src: "./images/image_11.jpeg", alt: "", title: "" },
+                { src: "./images/image_12.jpeg", alt: "", title: "" },
+                { src: "./images/image_13.jpeg", alt: "", title: "" },
+                { src: "./images/image_14.jpeg", alt: "", title: "" },
+                { src: "./images/image_15.jpeg", alt: "", title: "" },
+                { src: "./images/image_16.jpeg", alt: "", title: "" },
+                { src: "./images/image_17.jpeg", alt: "", title: "" },
+                { src: "./images/image_18.jpeg", alt: "", title: "" },
+                { src: "./images/image_19.jpeg", alt: "", title: "" },
+                { src: "./images/image_20.jpeg", alt: "", title: "" },
+                { src: "./images/image_21.jpeg", alt: "", title: "" },
+                { src: "./images/image_22.jpeg", alt: "", title: "" },
+                { src: "./images/image_23.jpeg", alt: "", title: "" },
+                { src: "./images/image_24.jpeg", alt: "", title: "" },
+                { src: "./images/image_25.jpeg", alt: "", title: "" },
+                { src: "./images/image_26.jpeg", alt: "", title: "" },
+                { src: "./images/image_27.jpeg", alt: "", title: "" },
+                { src: "./images/image_28.jpeg", alt: "", title: "" },
+                { src: "./images/image_29.jpeg", alt: "", title: "" },
+                { src: "./images/image_30.jpeg", alt: "", title: "" },
+                { src: "./images/image_31.jpeg", alt: "", title: "" },
+                { src: "./images/image_32.jpeg", alt: "", title: "" },
+                { src: "./images/image_33.jpeg", alt: "", title: "" },
+                { src: "./images/image_34.jpeg", alt: "", title: "" },
+                { src: "./images/image_35.jpeg", alt: "", title: "" },
+                { src: "./images/image_36.jpeg", alt: "", title: "" },
+                { src: "./images/image_37.jpeg", alt: "", title: "" },
+                { src: "./images/image_38.jpeg", alt: "", title: "" },
+                { src: "./images/image_39.jpeg", alt: "", title: "" },
+                { src: "./images/image_40.jpeg", alt: "", title: "" },
+                { src: "./images/image_41.jpeg", alt: "", title: "" },
+                { src: "./images/image_42.jpeg", alt: "", title: "" },
+                { src: "./images/image_43.jpeg", alt: "", title: "" },
+                { src: "./images/image_44.jpeg", alt: "", title: "" },
+                { src: "./images/image_45.jpeg", alt: "", title: "" },
+                { src: "./images/image_46.jpeg", alt: "", title: "" },
+                { src: "./images/image_47.jpeg", alt: "", title: "" },
+                { src: "./images/image_48.jpeg", alt: "", title: "" },
+                { src: "./images/image_49.jpeg", alt: "", title: "" },
+                { src: "./images/image_50.jpeg", alt: "", title: "" },
+                { src: "./images/image_51.jpeg", alt: "", title: "" },
+                { src: "./images/image_52.jpeg", alt: "", title: "" },
+                { src: "./images/image_53.jpeg", alt: "", title: "" },
+                { src: "./images/image_54.jpeg", alt: "", title: "" },
+                { src: "./images/image_55.jpeg", alt: "", title: "" },
+                { src: "./images/image_56.jpeg", alt: "", title: "" },
+                { src: "./images/image_57.jpeg", alt: "", title: "" },
+                { src: "./images/image_58.jpeg", alt: "", title: "" },
+            ];
+
+            // Core Functions
+            function generateGallery() {
+                const gallery = document.getElementById("gallery");
+                let imageIndex = 0;
+                let patternIndex = 0;
+
+                while (imageIndex < IMAGES.length) {
+                    const imagesInThisRow =
+                        ROW_PATTERN[patternIndex % ROW_PATTERN.length];
+                    const row = document.createElement("div");
+                    row.className = "gallery-row";
+
+                    for (
+                        let i = 0;
+                        i < imagesInThisRow && imageIndex < IMAGES.length;
+                        i++
+                    ) {
+                        const { src, alt, title } = IMAGES[imageIndex];
+                        const item = document.createElement("div");
+                        item.className = "gallery-item loading";
+                        item.dataset.pswpWidth = "1920";
+                        item.dataset.pswpHeight = "1080";
+                        item.innerHTML = `
+                            <img src="${src}" alt="${alt}" />
+                            ${title ? `<div class="image-overlay">${title}</div>` : ""}
+                        `;
+                        row.appendChild(item);
+                        imageIndex++;
+                    }
+                    gallery.appendChild(row);
+                    patternIndex++;
+                }
+            }
+
             function loadImage(src) {
                 return new Promise((resolve, reject) => {
                     const img = new Image();
@@ -415,7 +442,6 @@
                 });
             }
 
-            // Function to calculate optimal row height and widths
             function calculateRowLayout(images, containerWidth) {
                 const totalAspectRatio = images.reduce(
                     (sum, img) => sum + img.aspectRatio,
@@ -423,175 +449,129 @@
                 );
                 const availableWidth =
                     containerWidth - GAP * (images.length - 1);
-
-                // Calculate height that makes the total width exactly fit the container
                 const calculatedHeight = availableWidth / totalAspectRatio;
-
-                // Apply reasonable height constraints
-                const minHeight = TARGET_HEIGHT * 0.6;
-                const maxHeight = TARGET_HEIGHT * 1.8;
                 const constrainedHeight = Math.max(
-                    minHeight,
-                    Math.min(maxHeight, calculatedHeight),
+                    TARGET_HEIGHT * 0.6,
+                    Math.min(TARGET_HEIGHT * 1.8, calculatedHeight),
                 );
-
-                // Always use the full container width by scaling widths proportionally
                 const idealTotalWidth = images.reduce(
                     (sum, img) => sum + img.aspectRatio * constrainedHeight,
                     0,
                 );
                 const scaleFactor = availableWidth / idealTotalWidth;
-
-                // Calculate final widths that will exactly fill the container
                 const widths = images.map(
                     (img) => img.aspectRatio * constrainedHeight * scaleFactor,
                 );
 
-                return {
-                    height: constrainedHeight,
-                    widths: widths,
-                };
+                return { height: constrainedHeight, widths };
             }
 
-            // Function to apply layout to a row
             async function layoutRow(row) {
                 const items = Array.from(row.querySelectorAll(".gallery-item"));
                 const images = [];
 
-                // Load all images in the row and get their dimensions
                 for (const item of items) {
                     const img = item.querySelector("img");
                     try {
                         const dimensions = await loadImage(img.src);
                         images.push(dimensions);
-
-                        // Update PhotoSwipe data attributes with actual dimensions
                         item.dataset.pswpWidth = dimensions.width;
                         item.dataset.pswpHeight = dimensions.height;
-
-                        // Remove loading class
-                        item.classList.remove("loading");
                     } catch (error) {
                         console.error("Failed to load image:", img.src);
-                        // Use fallback aspect ratio
                         images.push({
                             aspectRatio: 1.5,
                             width: 1920,
                             height: 1280,
                         });
-                        item.classList.remove("loading");
                     }
+                    item.classList.remove("loading");
                 }
 
-                // Calculate layout
-                const containerWidth = row.offsetWidth;
-                const layout = calculateRowLayout(images, containerWidth);
-
-                // Apply the layout
-                row.style.height = `${layout.height}px`;
-
-                items.forEach((item, index) => {
-                    item.style.width = `${layout.widths[index]}px`;
-                    item.style.flex = "none";
-                });
+                if (window.innerWidth > 768) {
+                    const layout = calculateRowLayout(images, row.offsetWidth);
+                    row.style.height = `${layout.height}px`;
+                    items.forEach((item, index) => {
+                        item.style.width = `${layout.widths[index]}px`;
+                        item.style.flex = "none";
+                    });
+                }
             }
 
-            // Function to layout all rows
             async function layoutGallery() {
-                const gallery = document.getElementById("gallery");
                 const rows = Array.from(
-                    gallery.querySelectorAll(".gallery-row"),
+                    document.querySelectorAll(".gallery-row"),
                 );
-
-                // Layout each row
                 for (const row of rows) {
                     await layoutRow(row);
                 }
-
-                // Show the gallery
-                gallery.classList.add("loaded");
+                document.getElementById("gallery").classList.add("loaded");
             }
 
-            // Handle window resize
+            // Event Handlers
             let resizeTimer;
             function handleResize() {
                 clearTimeout(resizeTimer);
                 resizeTimer = setTimeout(() => {
-                    if (window.innerWidth > 768) {
-                        // Only re-layout on desktop
-                        layoutGallery();
-                    }
+                    if (window.innerWidth > 768) layoutGallery();
                 }, 250);
             }
 
-            // Initialize when DOM is loaded
-            document.addEventListener("DOMContentLoaded", () => {
-                layoutGallery();
-                window.addEventListener("resize", handleResize);
-            });
-
-            // Initialize PhotoSwipe
-            const lightbox = new PhotoSwipeLightbox({
-                gallery: "#gallery",
-                children: ".gallery-item",
-                pswpModule: PhotoSwipe,
-
-                bgOpacity: 1,
-                showHideAnimationType: "fade",
-
-                closeTitle: "Close",
-                zoomTitle: "Zoom",
-                arrowPrevTitle: "Previous",
-                arrowNextTitle: "Next",
-
-                wheelToZoom: true,
-                pinchToClose: false,
-                closeOnVerticalDrag: true,
-                allowPanToNext: true,
-                loop: true,
-
-                showAnimationDuration: 400,
-                hideAnimationDuration: 400,
-
-                preload: [1, 2],
-
-                errorMsg: "Image cannot be loaded",
-            });
-
-            // Custom image data handling
-            lightbox.addFilter("itemData", (itemData, index) => {
-                const img =
-                    document.querySelectorAll(".gallery-item img")[index];
-                return {
-                    src: img.src,
-                    width: parseInt(itemData.element.dataset.pswpWidth),
-                    height: parseInt(itemData.element.dataset.pswpHeight),
-                    alt: img.alt,
-                };
-            });
-
-            // Initialize PhotoSwipe
-            lightbox.init();
-
-            // Smooth scroll for back to top
-            document
-                .querySelector(".back-to-top")
-                .addEventListener("click", (e) => {
-                    e.preventDefault();
-                    window.scrollTo({
-                        top: 0,
-                        behavior: "smooth",
-                    });
+            // PhotoSwipe Setup
+            function initPhotoSwipe() {
+                const lightbox = new PhotoSwipeLightbox({
+                    gallery: "#gallery",
+                    children: ".gallery-item",
+                    pswpModule: PhotoSwipe,
+                    bgOpacity: 1,
+                    showHideAnimationType: "fade",
+                    wheelToZoom: true,
+                    pinchToClose: false,
+                    closeOnVerticalDrag: true,
+                    allowPanToNext: true,
+                    loop: true,
+                    showAnimationDuration: 400,
+                    hideAnimationDuration: 400,
+                    preload: [1, 2],
+                    errorMsg: "Image cannot be loaded",
                 });
 
-            // Keyboard shortcuts
-            document.addEventListener("keydown", (e) => {
-                if (e.key === "g" && !e.target.matches("input, textarea")) {
-                    e.preventDefault();
-                    document.querySelector(".gallery").scrollIntoView({
-                        behavior: "smooth",
+                lightbox.addFilter("itemData", (itemData, index) => {
+                    const img =
+                        document.querySelectorAll(".gallery-item img")[index];
+                    return {
+                        src: img.src,
+                        width: parseInt(itemData.element.dataset.pswpWidth),
+                        height: parseInt(itemData.element.dataset.pswpHeight),
+                        alt: img.alt,
+                    };
+                });
+
+                lightbox.init();
+            }
+
+            // Initialize
+            document.addEventListener("DOMContentLoaded", () => {
+                generateGallery();
+                layoutGallery();
+                initPhotoSwipe();
+                window.addEventListener("resize", handleResize);
+
+                document
+                    .querySelector(".back-to-top")
+                    .addEventListener("click", (e) => {
+                        e.preventDefault();
+                        window.scrollTo({ top: 0, behavior: "smooth" });
                     });
-                }
+
+                document.addEventListener("keydown", (e) => {
+                    if (e.key === "g" && !e.target.matches("input, textarea")) {
+                        e.preventDefault();
+                        document
+                            .querySelector(".gallery")
+                            .scrollIntoView({ behavior: "smooth" });
+                    }
+                });
             });
 
             console.log('Gallery loaded • Press "g" to jump to gallery');
