@@ -30,7 +30,7 @@
             }
 
             .container {
-                max-width: 1400px;
+                max-width: 1120px;
                 margin: 0 auto;
                 padding: 0 20px;
             }
@@ -74,21 +74,32 @@
                 border-bottom: 1px solid #000;
             }
 
-            /* Gallery Grid */
+            /* Gallery Container */
             .gallery {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-                gap: 2px;
                 margin-bottom: 80px;
+                opacity: 0;
+                transition: opacity 0.5s ease;
+            }
+
+            .gallery.loaded {
+                opacity: 1;
+            }
+
+            /* Gallery Rows */
+            .gallery-row {
+                display: flex;
+                gap: 7px;
+                margin-bottom: 7px;
+                height: 400px; /* Initial height, will be updated by JS */
             }
 
             .gallery-item {
                 position: relative;
                 overflow: hidden;
                 cursor: pointer;
-                aspect-ratio: 4/3;
                 background: #f8f8f8;
                 transition: opacity 0.3s ease;
+                /* Width will be set dynamically by JS based on aspect ratio */
             }
 
             .gallery-item:hover {
@@ -107,7 +118,7 @@
                 transform: scale(1.03);
             }
 
-            /* Image Overlay - Hidden by default, minimal when shown */
+            /* Image Overlay */
             .image-overlay {
                 position: absolute;
                 bottom: 0;
@@ -124,6 +135,22 @@
 
             .gallery-item:hover .image-overlay {
                 opacity: 1;
+            }
+
+            /* Loading state */
+            .gallery-item.loading {
+                background: #f0f0f0;
+                animation: pulse 1.5s ease-in-out infinite;
+            }
+
+            @keyframes pulse {
+                0%,
+                100% {
+                    opacity: 1;
+                }
+                50% {
+                    opacity: 0.7;
+                }
             }
 
             /* Footer */
@@ -167,14 +194,14 @@
                     font-size: 1rem;
                 }
 
-                .gallery {
-                    grid-template-columns: 1fr;
-                    gap: 1px;
-                    margin-bottom: 60px;
+                .gallery-row {
+                    flex-direction: column;
+                    height: auto;
                 }
 
                 .gallery-item {
-                    min-height: 300px;
+                    height: 300px;
+                    width: 100% !important;
                 }
 
                 .footer {
@@ -192,20 +219,7 @@
                 }
             }
 
-            /* Large screens */
-            @media (min-width: 1200px) {
-                .gallery {
-                    grid-template-columns: repeat(3, 1fr);
-                }
-            }
-
-            @media (min-width: 1600px) {
-                .gallery {
-                    grid-template-columns: repeat(4, 1fr);
-                }
-            }
-
-            /* Custom PhotoSwipe styling to match minimal aesthetic */
+            /* Custom PhotoSwipe styling */
             .pswp__bg {
                 background: #fff !important;
             }
@@ -218,111 +232,161 @@
                 background: rgba(255, 255, 255, 0.9) !important;
                 backdrop-filter: blur(10px);
             }
-
-            /* Loading animation */
-            .loading {
-                opacity: 0;
-                animation: fadeIn 0.5s ease forwards;
-            }
-
-            @keyframes fadeIn {
-                to {
-                    opacity: 1;
-                }
-            }
         </style>
     </head>
     <body>
         <div class="container">
             <header class="header">
-                <h1>Gallery</h1>
-                <p>
-                    A curated collection of visual stories capturing moments of
-                    beauty, emotion, and authentic human experience.
-                </p>
+                <h1>Xiaohan Zhang</h1>
+                <p>Learning how to take photos</p>
                 <div class="contact-info">
-                    <a href="mailto:work@example.com">work@example.com</a>
+                    <a href="mailto:xiaohan.zhang14gmail.com"
+                        >xiaohan.zhang14gmail.com</a
+                    >
                     |
-                    <a href="#" target="_blank">@gallery</a>
+                    <a
+                        href="https://www.instagram.com/justxiaohan/"
+                        target="_blank"
+                        >@justxiaohan</a
+                    >
                 </div>
             </header>
 
-            <div class="gallery loading" id="gallery">
-                <div
-                    class="gallery-item"
-                    data-pswp-width="1920"
-                    data-pswp-height="1080"
-                >
-                    <img
-                        src="https://picsum.photos/1920/1080?random=1"
-                        alt="Mountain landscape at golden hour"
-                    />
-                    <div class="image-overlay">Mountain Vista, 2024</div>
+            <div class="gallery" id="gallery">
+                <!-- Row 1: 2 images -->
+                <div class="gallery-row">
+                    <div
+                        class="gallery-item loading"
+                        data-pswp-width="1920"
+                        data-pswp-height="1080"
+                    >
+                        <img
+                            src="./images/IMG_9503.jpeg"
+                            alt="Mountain landscape at golden hour"
+                        />
+                        <div class="image-overlay">Mountain Vista, 2024</div>
+                    </div>
+                    <div
+                        class="gallery-item loading"
+                        data-pswp-width="1920"
+                        data-pswp-height="1280"
+                    >
+                        <img
+                            src="https://picsum.photos/1920/1280?random=2"
+                            alt="Ocean waves meeting the shore"
+                        />
+                        <div class="image-overlay">
+                            Coastal Reflections, 2024
+                        </div>
+                    </div>
                 </div>
 
-                <div
-                    class="gallery-item"
-                    data-pswp-width="1920"
-                    data-pswp-height="1280"
-                >
-                    <img
-                        src="https://picsum.photos/1920/1280?random=2"
-                        alt="Ocean waves meeting the shore"
-                    />
-                    <div class="image-overlay">Coastal Reflections, 2024</div>
+                <!-- Row 2: 3 images -->
+                <div class="gallery-row">
+                    <div
+                        class="gallery-item loading"
+                        data-pswp-width="1920"
+                        data-pswp-height="1200"
+                    >
+                        <img
+                            src="https://picsum.photos/1920/1200?random=3"
+                            alt="Forest path through morning mist"
+                        />
+                        <div class="image-overlay">Morning Path, 2024</div>
+                    </div>
+                    <div
+                        class="gallery-item loading"
+                        data-pswp-width="1920"
+                        data-pswp-height="1080"
+                    >
+                        <img
+                            src="https://picsum.photos/1920/1080?random=4"
+                            alt="Urban architecture and light"
+                        />
+                        <div class="image-overlay">Urban Studies, 2024</div>
+                    </div>
+                    <div
+                        class="gallery-item loading"
+                        data-pswp-width="1920"
+                        data-pswp-height="1440"
+                    >
+                        <img
+                            src="https://picsum.photos/1920/1440?random=5"
+                            alt="Desert landscape at sunset"
+                        />
+                        <div class="image-overlay">Desert Light, 2024</div>
+                    </div>
                 </div>
 
-                <div
-                    class="gallery-item"
-                    data-pswp-width="1920"
-                    data-pswp-height="1200"
-                >
-                    <img
-                        src="https://picsum.photos/1920/1200?random=3"
-                        alt="Forest path through morning mist"
-                    />
-                    <div class="image-overlay">Morning Path, 2024</div>
+                <!-- Row 3: 1 large image -->
+                <div class="gallery-row">
+                    <div
+                        class="gallery-item loading"
+                        data-pswp-width="1920"
+                        data-pswp-height="1080"
+                    >
+                        <img
+                            src="https://picsum.photos/1920/1080?random=6"
+                            alt="Abstract architectural detail"
+                        />
+                        <div class="image-overlay">Form & Function, 2024</div>
+                    </div>
                 </div>
 
-                <div
-                    class="gallery-item"
-                    data-pswp-width="1920"
-                    data-pswp-height="1080"
-                >
-                    <img
-                        src="https://picsum.photos/1920/1080?random=4"
-                        alt="Urban architecture and light"
-                    />
-                    <div class="image-overlay">Urban Studies, 2024</div>
-                </div>
-
-                <div
-                    class="gallery-item"
-                    data-pswp-width="1920"
-                    data-pswp-height="1440"
-                >
-                    <img
-                        src="https://picsum.photos/1920/1440?random=5"
-                        alt="Desert landscape at sunset"
-                    />
-                    <div class="image-overlay">Desert Light, 2024</div>
-                </div>
-
-                <div
-                    class="gallery-item"
-                    data-pswp-width="1920"
-                    data-pswp-height="1080"
-                >
-                    <img
-                        src="https://picsum.photos/1920/1080?random=6"
-                        alt="Abstract architectural detail"
-                    />
-                    <div class="image-overlay">Form & Function, 2024</div>
+                <!-- Row 4: 4 images -->
+                <div class="gallery-row">
+                    <div
+                        class="gallery-item loading"
+                        data-pswp-width="1920"
+                        data-pswp-height="1080"
+                    >
+                        <img
+                            src="https://picsum.photos/1920/1080?random=7"
+                            alt="Street photography"
+                        />
+                        <div class="image-overlay">Street Life, 2024</div>
+                    </div>
+                    <div
+                        class="gallery-item loading"
+                        data-pswp-width="1920"
+                        data-pswp-height="1280"
+                    >
+                        <img
+                            src="https://picsum.photos/1920/1280?random=8"
+                            alt="Portrait study"
+                        />
+                        <div class="image-overlay">Portrait, 2024</div>
+                    </div>
+                    <div
+                        class="gallery-item loading"
+                        data-pswp-width="1920"
+                        data-pswp-height="1200"
+                    >
+                        <img
+                            src="https://picsum.photos/1920/1200?random=9"
+                            alt="Nature close-up"
+                        />
+                        <div class="image-overlay">Nature Study, 2024</div>
+                    </div>
+                    <div
+                        class="gallery-item loading"
+                        data-pswp-width="1920"
+                        data-pswp-height="1080"
+                    >
+                        <img
+                            src="https://picsum.photos/1920/1080?random=10"
+                            alt="Architectural detail"
+                        />
+                        <div class="image-overlay">Architecture, 2024</div>
+                    </div>
                 </div>
             </div>
 
             <footer class="footer">
-                <p>All images © 2024. Click any image to view full size.</p>
+                <p>
+                    Shot on Sony a7cii, Sony a6300, iPhone 12 mini, and iPhone
+                    15 Pro
+                </p>
                 <a href="#" class="back-to-top">↑ Back to Top</a>
             </footer>
         </div>
@@ -332,37 +396,165 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/photoswipe-lightbox.min.js"></script>
 
         <script>
-            // Initialize PhotoSwipe with minimal UI
+            // Configuration
+            const TARGET_HEIGHT = 400; // Target height for rows (can be adjusted)
+            const GAP = 7; // Gap between images
+
+            // Function to load image and get dimensions
+            function loadImage(src) {
+                return new Promise((resolve, reject) => {
+                    const img = new Image();
+                    img.onload = () =>
+                        resolve({
+                            width: img.naturalWidth,
+                            height: img.naturalHeight,
+                            aspectRatio: img.naturalWidth / img.naturalHeight,
+                        });
+                    img.onerror = reject;
+                    img.src = src;
+                });
+            }
+
+            // Function to calculate optimal row height and widths
+            function calculateRowLayout(images, containerWidth) {
+                const totalAspectRatio = images.reduce(
+                    (sum, img) => sum + img.aspectRatio,
+                    0,
+                );
+                const availableWidth =
+                    containerWidth - GAP * (images.length - 1);
+
+                // Calculate height that makes the total width exactly fit the container
+                const calculatedHeight = availableWidth / totalAspectRatio;
+
+                // Apply reasonable height constraints
+                const minHeight = TARGET_HEIGHT * 0.6;
+                const maxHeight = TARGET_HEIGHT * 1.8;
+                const constrainedHeight = Math.max(
+                    minHeight,
+                    Math.min(maxHeight, calculatedHeight),
+                );
+
+                // Always use the full container width by scaling widths proportionally
+                const idealTotalWidth = images.reduce(
+                    (sum, img) => sum + img.aspectRatio * constrainedHeight,
+                    0,
+                );
+                const scaleFactor = availableWidth / idealTotalWidth;
+
+                // Calculate final widths that will exactly fill the container
+                const widths = images.map(
+                    (img) => img.aspectRatio * constrainedHeight * scaleFactor,
+                );
+
+                return {
+                    height: constrainedHeight,
+                    widths: widths,
+                };
+            }
+
+            // Function to apply layout to a row
+            async function layoutRow(row) {
+                const items = Array.from(row.querySelectorAll(".gallery-item"));
+                const images = [];
+
+                // Load all images in the row and get their dimensions
+                for (const item of items) {
+                    const img = item.querySelector("img");
+                    try {
+                        const dimensions = await loadImage(img.src);
+                        images.push(dimensions);
+
+                        // Update PhotoSwipe data attributes with actual dimensions
+                        item.dataset.pswpWidth = dimensions.width;
+                        item.dataset.pswpHeight = dimensions.height;
+
+                        // Remove loading class
+                        item.classList.remove("loading");
+                    } catch (error) {
+                        console.error("Failed to load image:", img.src);
+                        // Use fallback aspect ratio
+                        images.push({
+                            aspectRatio: 1.5,
+                            width: 1920,
+                            height: 1280,
+                        });
+                        item.classList.remove("loading");
+                    }
+                }
+
+                // Calculate layout
+                const containerWidth = row.offsetWidth;
+                const layout = calculateRowLayout(images, containerWidth);
+
+                // Apply the layout
+                row.style.height = `${layout.height}px`;
+
+                items.forEach((item, index) => {
+                    item.style.width = `${layout.widths[index]}px`;
+                    item.style.flex = "none";
+                });
+            }
+
+            // Function to layout all rows
+            async function layoutGallery() {
+                const gallery = document.getElementById("gallery");
+                const rows = Array.from(
+                    gallery.querySelectorAll(".gallery-row"),
+                );
+
+                // Layout each row
+                for (const row of rows) {
+                    await layoutRow(row);
+                }
+
+                // Show the gallery
+                gallery.classList.add("loaded");
+            }
+
+            // Handle window resize
+            let resizeTimer;
+            function handleResize() {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(() => {
+                    if (window.innerWidth > 768) {
+                        // Only re-layout on desktop
+                        layoutGallery();
+                    }
+                }, 250);
+            }
+
+            // Initialize when DOM is loaded
+            document.addEventListener("DOMContentLoaded", () => {
+                layoutGallery();
+                window.addEventListener("resize", handleResize);
+            });
+
+            // Initialize PhotoSwipe
             const lightbox = new PhotoSwipeLightbox({
                 gallery: "#gallery",
                 children: ".gallery-item",
                 pswpModule: PhotoSwipe,
 
-                // Minimal, clean options
                 bgOpacity: 1,
                 showHideAnimationType: "fade",
 
-                // UI customization for minimal look
                 closeTitle: "Close",
                 zoomTitle: "Zoom",
                 arrowPrevTitle: "Previous",
                 arrowNextTitle: "Next",
 
-                // Interaction options
                 wheelToZoom: true,
                 pinchToClose: false,
                 closeOnVerticalDrag: true,
                 allowPanToNext: true,
                 loop: true,
 
-                // Smooth animations
                 showAnimationDuration: 400,
                 hideAnimationDuration: 400,
 
-                // Preloading
                 preload: [1, 2],
 
-                // Error handling
                 errorMsg: "Image cannot be loaded",
             });
 
@@ -378,7 +570,7 @@
                 };
             });
 
-            // Initialize
+            // Initialize PhotoSwipe
             lightbox.init();
 
             // Smooth scroll for back to top
@@ -391,19 +583,6 @@
                         behavior: "smooth",
                     });
                 });
-
-            // Lazy loading effect
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("loading");
-                    }
-                });
-            });
-
-            document.querySelectorAll(".gallery-item").forEach((item) => {
-                observer.observe(item);
-            });
 
             // Keyboard shortcuts
             document.addEventListener("keydown", (e) => {
