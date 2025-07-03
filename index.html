@@ -331,67 +331,358 @@
             // Configuration
             const TARGET_HEIGHT = 400;
             const GAP = 7;
-            const ROW_PATTERN = [3, 2, 4, 2, 3, 2, 4, 4];
+            const ROW_PATTERN = [4, 2, 3, 2, 5];
 
+            // Updated IMAGES array with thumbnails for display and originals for PhotoSwipe
             const IMAGES = [
-                { src: "./images/image_1.jpeg", alt: "", title: "" },
-                { src: "./images/image_2.jpeg", alt: "", title: "" },
-                { src: "./images/image_3.jpeg", alt: "", title: "" },
-                { src: "./images/image_4.jpeg", alt: "", title: "" },
-                { src: "./images/image_5.jpeg", alt: "", title: "" },
-                { src: "./images/image_6.jpeg", alt: "", title: "" },
-                { src: "./images/image_7.jpeg", alt: "", title: "" },
-                { src: "./images/image_8.jpeg", alt: "", title: "" },
-                { src: "./images/image_9.jpeg", alt: "", title: "" },
-                { src: "./images/image_10.jpeg", alt: "", title: "" },
-                { src: "./images/image_11.jpeg", alt: "", title: "" },
-                { src: "./images/image_12.jpeg", alt: "", title: "" },
-                { src: "./images/image_13.jpeg", alt: "", title: "" },
-                { src: "./images/image_14.jpeg", alt: "", title: "" },
-                { src: "./images/image_15.jpeg", alt: "", title: "" },
-                { src: "./images/image_16.jpeg", alt: "", title: "" },
-                { src: "./images/image_17.jpeg", alt: "", title: "" },
-                { src: "./images/image_18.jpeg", alt: "", title: "" },
-                { src: "./images/image_19.jpeg", alt: "", title: "" },
-                { src: "./images/image_20.jpeg", alt: "", title: "" },
-                { src: "./images/image_21.jpeg", alt: "", title: "" },
-                { src: "./images/image_22.jpeg", alt: "", title: "" },
-                { src: "./images/image_23.jpeg", alt: "", title: "" },
-                { src: "./images/image_24.jpeg", alt: "", title: "" },
-                { src: "./images/image_25.jpeg", alt: "", title: "" },
-                { src: "./images/image_26.jpeg", alt: "", title: "" },
-                { src: "./images/image_27.jpeg", alt: "", title: "" },
-                { src: "./images/image_28.jpeg", alt: "", title: "" },
-                { src: "./images/image_29.jpeg", alt: "", title: "" },
-                { src: "./images/image_30.jpeg", alt: "", title: "" },
-                { src: "./images/image_31.jpeg", alt: "", title: "" },
-                { src: "./images/image_32.jpeg", alt: "", title: "" },
-                { src: "./images/image_33.jpeg", alt: "", title: "" },
-                { src: "./images/image_34.jpeg", alt: "", title: "" },
-                { src: "./images/image_35.jpeg", alt: "", title: "" },
-                { src: "./images/image_36.jpeg", alt: "", title: "" },
-                { src: "./images/image_37.jpeg", alt: "", title: "" },
-                { src: "./images/image_38.jpeg", alt: "", title: "" },
-                { src: "./images/image_39.jpeg", alt: "", title: "" },
-                { src: "./images/image_40.jpeg", alt: "", title: "" },
-                { src: "./images/image_41.jpeg", alt: "", title: "" },
-                { src: "./images/image_42.jpeg", alt: "", title: "" },
-                { src: "./images/image_43.jpeg", alt: "", title: "" },
-                { src: "./images/image_44.jpeg", alt: "", title: "" },
-                { src: "./images/image_45.jpeg", alt: "", title: "" },
-                { src: "./images/image_46.jpeg", alt: "", title: "" },
-                { src: "./images/image_47.jpeg", alt: "", title: "" },
-                { src: "./images/image_48.jpeg", alt: "", title: "" },
-                { src: "./images/image_49.jpeg", alt: "", title: "" },
-                { src: "./images/image_50.jpeg", alt: "", title: "" },
-                { src: "./images/image_51.jpeg", alt: "", title: "" },
-                { src: "./images/image_52.jpeg", alt: "", title: "" },
-                { src: "./images/image_53.jpeg", alt: "", title: "" },
-                { src: "./images/image_54.jpeg", alt: "", title: "" },
-                { src: "./images/image_55.jpeg", alt: "", title: "" },
-                { src: "./images/image_56.jpeg", alt: "", title: "" },
-                { src: "./images/image_57.jpeg", alt: "", title: "" },
-                { src: "./images/image_58.jpeg", alt: "", title: "" },
+                {
+                    src: "./thumbnails/image_1.jpeg",
+                    fullSrc: "./images/image_1.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_2.jpeg",
+                    fullSrc: "./images/image_2.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_3.jpeg",
+                    fullSrc: "./images/image_3.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_4.jpeg",
+                    fullSrc: "./images/image_4.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_5.jpeg",
+                    fullSrc: "./images/image_5.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_6.jpeg",
+                    fullSrc: "./images/image_6.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_7.jpeg",
+                    fullSrc: "./images/image_7.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_8.jpeg",
+                    fullSrc: "./images/image_8.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_9.jpeg",
+                    fullSrc: "./images/image_9.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_10.jpeg",
+                    fullSrc: "./images/image_10.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_11.jpeg",
+                    fullSrc: "./images/image_11.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_12.jpeg",
+                    fullSrc: "./images/image_12.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_13.jpeg",
+                    fullSrc: "./images/image_13.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_14.jpeg",
+                    fullSrc: "./images/image_14.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_15.jpeg",
+                    fullSrc: "./images/image_15.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_16.jpeg",
+                    fullSrc: "./images/image_16.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_17.jpeg",
+                    fullSrc: "./images/image_17.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_18.jpeg",
+                    fullSrc: "./images/image_18.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_19.jpeg",
+                    fullSrc: "./images/image_19.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_20.jpeg",
+                    fullSrc: "./images/image_20.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_21.jpeg",
+                    fullSrc: "./images/image_21.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_22.jpeg",
+                    fullSrc: "./images/image_22.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_23.jpeg",
+                    fullSrc: "./images/image_23.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_24.jpeg",
+                    fullSrc: "./images/image_24.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_25.jpeg",
+                    fullSrc: "./images/image_25.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_26.jpeg",
+                    fullSrc: "./images/image_26.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_27.jpeg",
+                    fullSrc: "./images/image_27.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_28.jpeg",
+                    fullSrc: "./images/image_28.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_29.jpeg",
+                    fullSrc: "./images/image_29.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_30.jpeg",
+                    fullSrc: "./images/image_30.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_31.jpeg",
+                    fullSrc: "./images/image_31.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_32.jpeg",
+                    fullSrc: "./images/image_32.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_33.jpeg",
+                    fullSrc: "./images/image_33.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_34.jpeg",
+                    fullSrc: "./images/image_34.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_35.jpeg",
+                    fullSrc: "./images/image_35.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_36.jpeg",
+                    fullSrc: "./images/image_36.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_37.jpeg",
+                    fullSrc: "./images/image_37.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_38.jpeg",
+                    fullSrc: "./images/image_38.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_39.jpeg",
+                    fullSrc: "./images/image_39.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_40.jpeg",
+                    fullSrc: "./images/image_40.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_41.jpeg",
+                    fullSrc: "./images/image_41.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_42.jpeg",
+                    fullSrc: "./images/image_42.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_43.jpeg",
+                    fullSrc: "./images/image_43.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_44.jpeg",
+                    fullSrc: "./images/image_44.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_45.jpeg",
+                    fullSrc: "./images/image_45.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_46.jpeg",
+                    fullSrc: "./images/image_46.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_47.jpeg",
+                    fullSrc: "./images/image_47.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_48.jpeg",
+                    fullSrc: "./images/image_48.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_49.jpeg",
+                    fullSrc: "./images/image_49.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_50.jpeg",
+                    fullSrc: "./images/image_50.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_51.jpeg",
+                    fullSrc: "./images/image_51.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_52.jpeg",
+                    fullSrc: "./images/image_52.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_53.jpeg",
+                    fullSrc: "./images/image_53.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_54.jpeg",
+                    fullSrc: "./images/image_54.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_55.jpeg",
+                    fullSrc: "./images/image_55.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_56.jpeg",
+                    fullSrc: "./images/image_56.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_57.jpeg",
+                    fullSrc: "./images/image_57.jpeg",
+                    alt: "",
+                    title: "",
+                },
+                {
+                    src: "./thumbnails/image_58.jpeg",
+                    fullSrc: "./images/image_58.jpeg",
+                    alt: "",
+                    title: "",
+                },
             ];
 
             // Core Functions
@@ -411,11 +702,12 @@
                         i < imagesInThisRow && imageIndex < IMAGES.length;
                         i++
                     ) {
-                        const { src, alt, title } = IMAGES[imageIndex];
+                        const { src, fullSrc, alt, title } = IMAGES[imageIndex];
                         const item = document.createElement("div");
                         item.className = "gallery-item loading";
                         item.dataset.pswpWidth = "1920";
                         item.dataset.pswpHeight = "1080";
+                        item.dataset.fullSrc = fullSrc; // Store full-size image path
                         item.innerHTML = `
                             <img src="${src}" alt="${alt}" />
                             ${title ? `<div class="image-overlay">${title}</div>` : ""}
@@ -517,7 +809,7 @@
                 }, 250);
             }
 
-            // PhotoSwipe Setup
+            // PhotoSwipe Setup - Updated to use full-size images
             function initPhotoSwipe() {
                 const lightbox = new PhotoSwipeLightbox({
                     gallery: "#gallery",
@@ -537,12 +829,14 @@
                 });
 
                 lightbox.addFilter("itemData", (itemData, index) => {
-                    const img =
-                        document.querySelectorAll(".gallery-item img")[index];
+                    const element = itemData.element;
+                    const fullSrc = element.dataset.fullSrc; // Use full-size image for PhotoSwipe
+                    const img = element.querySelector("img");
+
                     return {
-                        src: img.src,
-                        width: parseInt(itemData.element.dataset.pswpWidth),
-                        height: parseInt(itemData.element.dataset.pswpHeight),
+                        src: fullSrc, // Use full-size image
+                        width: parseInt(element.dataset.pswpWidth),
+                        height: parseInt(element.dataset.pswpHeight),
                         alt: img.alt,
                     };
                 });
