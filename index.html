@@ -435,9 +435,7 @@
         </div>
 
         <!-- Floating back to top button for mobile -->
-        <button class="floating-back-to-top" id="floatingBackToTop">
-            ↑
-        </button>
+        <button class="floating-back-to-top" id="floatingBackToTop">↑</button>
 
         <script>
             // Configuration
@@ -994,3 +992,31 @@
             function scrollToTop() {
                 window.scrollTo({ top: 0, behavior: "smooth" });
             }
+            // Initialize
+            document.addEventListener("DOMContentLoaded", () => {
+                generateGallery();
+                layoutGallery();
+                initSimpleLightbox();
+                window.addEventListener("resize", handleResize);
+
+                document
+                    .querySelector(".back-to-top")
+                    .addEventListener("click", (e) => {
+                        e.preventDefault();
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                    });
+
+                document.addEventListener("keydown", (e) => {
+                    if (e.key === "g" && !e.target.matches("input, textarea")) {
+                        e.preventDefault();
+                        document
+                            .querySelector(".gallery")
+                            .scrollIntoView({ behavior: "smooth" });
+                    }
+                });
+            });
+
+            console.log('Gallery loaded • Press "g" to jump to gallery');
+        </script>
+    </body>
+</html>
