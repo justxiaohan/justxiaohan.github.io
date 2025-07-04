@@ -665,7 +665,6 @@
                     src: "./thumbnails/image_37.jpeg",
                     fullSrc: "./images/image_37.jpeg",
                     alt: "",
-                    title: "",
                 },
                 {
                     src: "./thumbnails/image_38.jpeg",
@@ -824,9 +823,9 @@
                         const loadingAttr = imageIndex < 6 ? "eager" : "lazy";
 
                         item.innerHTML = `
-                            <img src="${src}" alt="${alt}" loading="${loadingAttr}" fetchpriority="${fetchPriority}" />
-                            ${title ? `<div class="image-overlay">${title}</div>` : ""}
-                        `;
+                                    <img src="${src}" alt="${alt}" loading="${loadingAttr}" fetchpriority="${fetchPriority}" />
+                                    ${title ? `<div class="image-overlay">${title}</div>` : ""}
+                                `;
                         row.appendChild(item);
                         imageIndex++;
                     }
@@ -943,27 +942,27 @@
                         // Create lightbox overlay
                         const lightbox = document.createElement("div");
                         lightbox.style.cssText = `
-                            position: fixed;
-                            top: 0;
-                            left: 0;
-                            width: 100%;
-                            height: 100%;
-                            background: rgba(0, 0, 0, 0.9);
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            z-index: 9999;
-                            cursor: pointer;
-                        `;
+                                    position: fixed;
+                                    top: 0;
+                                    left: 0;
+                                    width: 100%;
+                                    height: 100%;
+                                    background: rgba(0, 0, 0, 0.9);
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    z-index: 9999;
+                                    cursor: pointer;
+                                `;
 
                         // Create image
                         const lightboxImg = document.createElement("img");
                         lightboxImg.src = fullSrc;
                         lightboxImg.style.cssText = `
-                            max-width: 90%;
-                            max-height: 90%;
-                            object-fit: contain;
-                        `;
+                                    max-width: 90%;
+                                    max-height: 90%;
+                                    object-fit: contain;
+                                `;
 
                         lightbox.appendChild(lightboxImg);
                         document.body.appendChild(lightbox);
@@ -999,10 +998,18 @@
                 initSimpleLightbox();
                 window.addEventListener("resize", handleResize);
 
+                // Desktop back to top link
                 document
                     .querySelector(".back-to-top")
                     .addEventListener("click", (e) => {
                         e.preventDefault();
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                    });
+
+                // Mobile floating back to top button - THIS WAS MISSING!
+                document
+                    .getElementById("floatingBackToTop")
+                    .addEventListener("click", () => {
                         window.scrollTo({ top: 0, behavior: "smooth" });
                     });
 
