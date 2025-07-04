@@ -241,6 +241,35 @@
                 transform: translateY(-2px);
             }
 
+            /* Floating back to top button for mobile */
+            .floating-back-to-top {
+                display: none;
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                background: rgba(0, 0, 0, 0.8);
+                color: white;
+                border: none;
+                border-radius: 50%;
+                font-size: 20px;
+                cursor: pointer;
+                z-index: 1000;
+                transition: all 0.3s ease;
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+            }
+
+            .floating-back-to-top:hover {
+                background: rgba(0, 0, 0, 0.9);
+                transform: translateY(-2px);
+            }
+
+            .floating-back-to-top:active {
+                transform: translateY(0);
+            }
+
             /* Responsive Design */
             @media (max-width: 1024px) {
                 .container {
@@ -311,6 +340,16 @@
                 .image-overlay {
                     display: none;
                 }
+
+                /* Show floating button on mobile */
+                .floating-back-to-top {
+                    display: block;
+                }
+
+                /* Hide footer back to top on mobile */
+                .footer .back-to-top {
+                    display: none;
+                }
             }
 
             @media (max-width: 480px) {
@@ -336,6 +375,14 @@
                 .footer {
                     padding: 30px 0;
                     font-size: 0.85rem;
+                }
+
+                .floating-back-to-top {
+                    bottom: 15px;
+                    right: 15px;
+                    width: 45px;
+                    height: 45px;
+                    font-size: 18px;
                 }
             }
 
@@ -386,6 +433,11 @@
                 <a href="#" class="back-to-top">↑ Back to Top</a>
             </footer>
         </div>
+
+        <!-- Floating back to top button for mobile -->
+        <button class="floating-back-to-top" id="floatingBackToTop">
+            ↑
+        </button>
 
         <script>
             // Configuration
@@ -938,31 +990,7 @@
                 });
             }
 
-            // Initialize
-            document.addEventListener("DOMContentLoaded", () => {
-                generateGallery();
-                layoutGallery();
-                initSimpleLightbox();
-                window.addEventListener("resize", handleResize);
-
-                document
-                    .querySelector(".back-to-top")
-                    .addEventListener("click", (e) => {
-                        e.preventDefault();
-                        window.scrollTo({ top: 0, behavior: "smooth" });
-                    });
-
-                document.addEventListener("keydown", (e) => {
-                    if (e.key === "g" && !e.target.matches("input, textarea")) {
-                        e.preventDefault();
-                        document
-                            .querySelector(".gallery")
-                            .scrollIntoView({ behavior: "smooth" });
-                    }
-                });
-            });
-
-            console.log('Gallery loaded • Press "g" to jump to gallery');
-        </script>
-    </body>
-</html>
+            // Back to top functionality
+            function scrollToTop() {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            }
