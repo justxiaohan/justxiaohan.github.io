@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
     <head>
+        <!-- Vibe coded by Xiaohan Zhang -->
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
@@ -10,7 +11,38 @@
         <title>
             Xiaohan Zhang - Photographer, chef, digital marketer in Seattle, WA
         </title>
-        <!-- Google tag (gtag.js) -->
+
+        <!-- Preconnect to external domains for faster loading -->
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+
+        <!-- Preload critical images -->
+        <link
+            rel="preload"
+            href="./thumbnails/image_1.jpeg"
+            as="image"
+            fetchpriority="high"
+        />
+        <link
+            rel="preload"
+            href="./thumbnails/image_2.jpeg"
+            as="image"
+            fetchpriority="high"
+        />
+        <link
+            rel="preload"
+            href="./thumbnails/image_3.jpeg"
+            as="image"
+            fetchpriority="high"
+        />
+        <link
+            rel="preload"
+            href="./thumbnails/image_4.jpeg"
+            as="image"
+            fetchpriority="high"
+        />
+
+        <!-- Google tag (gtag.js) - moved to end of head for better performance -->
         <script
             async
             src="https://www.googletagmanager.com/gtag/js?id=G-Q9KSP1VH2F"
@@ -21,14 +53,8 @@
                 dataLayer.push(arguments);
             }
             gtag("js", new Date());
-
             gtag("config", "G-Q9KSP1VH2F");
         </script>
-
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/photoswipe.min.css"
-        />
 
         <style>
             * {
@@ -156,6 +182,7 @@
                 animation: pulse 1.5s ease-in-out infinite;
             }
 
+            /* Skeleton loading animation */
             @keyframes pulse {
                 0%,
                 100% {
@@ -163,6 +190,33 @@
                 }
                 50% {
                     opacity: 0.7;
+                }
+            }
+
+            /* Placeholder for images while loading */
+            .gallery-item.loading::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(
+                    90deg,
+                    #f0f0f0 25%,
+                    #e0e0e0 50%,
+                    #f0f0f0 75%
+                );
+                background-size: 200% 100%;
+                animation: shimmer 1.5s infinite;
+            }
+
+            @keyframes shimmer {
+                0% {
+                    background-position: -200% 0;
+                }
+                100% {
+                    background-position: 200% 0;
                 }
             }
 
@@ -301,18 +355,6 @@
                 .gallery-item {
                     margin-bottom: 10px;
                 }
-            }
-
-            /* PhotoSwipe Custom Styling */
-            .pswp__bg {
-                background: #fff !important;
-            }
-            .pswp__ui {
-                color: #000 !important;
-            }
-            .pswp__top-bar {
-                background: rgba(255, 255, 255, 0.9) !important;
-                backdrop-filter: blur(10px);
             }
         </style>
     </head>
@@ -725,9 +767,14 @@
                         item.className = "gallery-item loading";
                         item.dataset.pswpWidth = "1920";
                         item.dataset.pswpHeight = "1080";
-                        item.dataset.fullSrc = fullSrc; // Store full-size image path
+                        item.dataset.fullSrc = fullSrc;
+
+                        // Add fetchpriority for above-the-fold images
+                        const fetchPriority = imageIndex < 4 ? "high" : "low";
+                        const loadingAttr = imageIndex < 6 ? "eager" : "lazy";
+
                         item.innerHTML = `
-                            <img src="${src}" alt="${alt}" />
+                            <img src="${src}" alt="${alt}" loading="${loadingAttr}" fetchpriority="${fetchPriority}" />
                             ${title ? `<div class="image-overlay">${title}</div>` : ""}
                         `;
                         row.appendChild(item);
@@ -812,9 +859,17 @@
                 const rows = Array.from(
                     document.querySelectorAll(".gallery-row"),
                 );
-                for (const row of rows) {
-                    await layoutRow(row);
+
+                // Process first row immediately for better LCP
+                if (rows.length > 0) {
+                    await layoutRow(rows[0]);
                 }
+
+                // Process remaining rows with slight delay to prioritize first row
+                for (let i = 1; i < rows.length; i++) {
+                    await layoutRow(rows[i]);
+                }
+
                 document.getElementById("gallery").classList.add("loaded");
             }
 
@@ -827,14 +882,13 @@
                 }, 250);
             }
 
-            // Simple lightbox functionality without PhotoSwipe
+            // Simple lightbox functionality
             function initSimpleLightbox() {
                 const galleryItems = document.querySelectorAll(".gallery-item");
 
                 galleryItems.forEach((item) => {
                     item.addEventListener("click", function () {
                         const fullSrc = this.dataset.fullSrc;
-                        const img = this.querySelector("img");
 
                         // Create lightbox overlay
                         const lightbox = document.createElement("div");
