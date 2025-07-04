@@ -830,8 +830,15 @@
                 }, 250);
             }
 
-            // PhotoSwipe Setup - Updated to use full-size images
+            // PhotoSwipe Setup - Updated with loading check
             function initPhotoSwipe() {
+                // Check if PhotoSwipe is loaded
+                if (typeof PhotoSwipeLightbox === "undefined") {
+                    console.error("PhotoSwipe not loaded yet, retrying...");
+                    setTimeout(initPhotoSwipe, 100);
+                    return;
+                }
+
                 const lightbox = new PhotoSwipeLightbox({
                     gallery: "#gallery",
                     children: ".gallery-item",
