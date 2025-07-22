@@ -12,7 +12,6 @@
 
     <!-- Preconnect to external domains for faster loading -->
     <link rel="preconnect" href="https://www.googletagmanager.com" />
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
 
     <!-- Preload critical images -->
     <link rel="preload" href="./thumbnails/image_1.jpeg" as="image" fetchpriority="high" />
@@ -459,7 +458,7 @@
         const GAP = 7;
         const ROW_PATTERN = [4, 2, 3, 4, 3];
 
-        // Updated IMAGES array with thumbnails for display and originals for PhotoSwipe
+        // IMAGES array with thumbnails for display and full-res for lightbox
         const IMAGES = [
             {
                 src: "./thumbnails/image_1.jpeg",
@@ -829,8 +828,6 @@
                     const { src, fullSrc, alt, title } = IMAGES[imageIndex];
                     const item = document.createElement("div");
                     item.className = "gallery-item loading";
-                    item.dataset.pswpWidth = "1920";
-                    item.dataset.pswpHeight = "1080";
                     item.dataset.fullSrc = fullSrc;
 
                     // Add fetchpriority for above-the-fold images
@@ -838,7 +835,7 @@
                     const loadingAttr = imageIndex < 6 ? "eager" : "lazy";
 
                     item.innerHTML = `
-                                    <img src="${src}" alt="${alt}" loading="${loadingAttr}" fetchpriority="${fetchPriority}" width="800" height="600" />
+                                    <img src="${src}" alt="${alt}" loading="${loadingAttr}" fetchpriority="${fetchPriority}" />
                                     ${title ? `<div class="image-overlay">${title}</div>` : ""}
                                 `;
                     row.appendChild(item);
@@ -896,8 +893,6 @@
                 try {
                     const dimensions = await loadImage(img.src);
                     images.push(dimensions);
-                    item.dataset.pswpWidth = dimensions.width;
-                    item.dataset.pswpHeight = dimensions.height;
                 } catch (error) {
                     console.error("Failed to load image:", img.src);
                     images.push({
@@ -1027,8 +1022,6 @@
                 .addEventListener("click", () => {
                     window.scrollTo({ top: 0, behavior: "smooth" });
                 });
-
-
         });
     </script>
 </body>
