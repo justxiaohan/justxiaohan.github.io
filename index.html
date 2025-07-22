@@ -1,947 +1,937 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <!-- Vibe coded by Xiaohan Zhang -->
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta
-            name="description"
-            content="Meet Xiaohan Zhang, a Seattle-based photographer, chef, and digital marketer."
-        />
-        <title>
-            Xiaohan Zhang - Photographer, chef, digital marketer in Seattle, WA
-        </title>
 
-        <!-- Preconnect to external domains for faster loading -->
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+<head>
+    <!-- Vibe coded by Xiaohan Zhang -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Meet Xiaohan Zhang, a Seattle-based photographer, chef, and digital marketer." />
+    <title>
+        Xiaohan Zhang - Photographer, chef, digital marketer in Seattle, WA
+    </title>
 
-        <!-- Preload critical images -->
-        <link
-            rel="preload"
-            href="./thumbnails/image_1.jpeg"
-            as="image"
-            fetchpriority="high"
-        />
-        <link
-            rel="preload"
-            href="./thumbnails/image_2.jpeg"
-            as="image"
-            fetchpriority="high"
-        />
-        <link
-            rel="preload"
-            href="./thumbnails/image_3.jpeg"
-            as="image"
-            fetchpriority="high"
-        />
-        <link
-            rel="preload"
-            href="./thumbnails/image_4.jpeg"
-            as="image"
-            fetchpriority="high"
-        />
+    <!-- Preconnect to external domains for faster loading -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
 
-        <!-- Google tag (gtag.js) - moved to end of head for better performance -->
-        <script
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=G-Q9KSP1VH2F"
-        ></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() {
-                dataLayer.push(arguments);
-            }
-            gtag("js", new Date());
-            gtag("config", "G-Q9KSP1VH2F");
-        </script>
+    <!-- Preload critical images -->
+    <link rel="preload" href="./thumbnails/image_1.jpeg" as="image" fetchpriority="high" />
+    <link rel="preload" href="./thumbnails/image_2.jpeg" as="image" fetchpriority="high" />
+    <link rel="preload" href="./thumbnails/image_3.jpeg" as="image" fetchpriority="high" />
+    <link rel="preload" href="./thumbnails/image_4.jpeg" as="image" fetchpriority="high" />
 
-        <style>
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
+    <!-- Google tag (gtag.js) - moved to end of head for better performance -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q9KSP1VH2F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+        gtag("config", "G-Q9KSP1VH2F");
+    </script>
 
-            body {
-                font-family:
-                    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-                    sans-serif;
-                line-height: 1.6;
-                color: #000;
-                background: #fff;
-                font-size: 16px;
-                letter-spacing: -0.01em;
-            }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-            .container {
-                max-width: 1120px;
-                margin: 0 auto;
-                padding: 0 20px;
-            }
+        body {
+            font-family:
+                -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                sans-serif;
+            line-height: 1.6;
+            color: #000;
+            background: #fff;
+            font-size: 16px;
+            letter-spacing: -0.01em;
+        }
 
-            .header {
-                padding: 60px 0 40px;
-                text-align: center;
-                border-bottom: 1px solid #e8e8e8;
-                margin-bottom: 60px;
-            }
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-            .header h1 {
-                font-size: 2.5rem;
-                font-weight: 400;
-                margin-bottom: 20px;
-                letter-spacing: -0.02em;
-            }
+        .header {
+            padding: 60px 0 40px;
+            text-align: center;
+            border-bottom: 1px solid #e8e8e8;
+            margin-bottom: 60px;
+        }
 
-            .header p {
-                font-size: 1.1rem;
-                color: #666;
-                font-weight: 300;
-                max-width: 600px;
-                margin: 0 auto 30px;
-            }
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
 
-            .contact-info {
-                font-size: 0.95rem;
-                color: #888;
-            }
+        .header p {
+            font-size: 1.1rem;
+            color: #888;
+            font-weight: 300;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
 
-            .contact-info a {
-                color: #000;
-                text-decoration: none;
-                border-bottom: 1px solid transparent;
-                transition: border-bottom 0.2s ease;
-            }
+        .contact-info {
+            font-size: 0.95rem;
+            color: #888;
+        }
 
-            .contact-info a:hover {
-                border-bottom: 1px solid #000;
-            }
+        .contact-info a {
+            color: #000;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-bottom 0.2s ease;
+        }
 
-            .gallery {
-                margin-bottom: 80px;
-                opacity: 0;
-                transition: opacity 0.5s ease;
-            }
+        .contact-info a:hover {
+            border-bottom: 1px solid #000;
+        }
 
-            .gallery.loaded {
+        .gallery {
+            margin-bottom: 80px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .gallery.loaded {
+            opacity: 1;
+        }
+
+        .gallery-row {
+            display: flex;
+            gap: 7px;
+            margin-bottom: 7px;
+            height: 400px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            background: #f8f8f8;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            opacity: 0.85;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.03);
+        }
+
+        .image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.4));
+            color: white;
+            padding: 30px 20px 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+
+        .gallery-item:hover .image-overlay {
+            opacity: 1;
+        }
+
+        .gallery-item.loading {
+            background: #f0f0f0;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        /* Skeleton loading animation */
+        @keyframes pulse {
+
+            0%,
+            100% {
                 opacity: 1;
             }
 
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        /* Placeholder for images while loading */
+        .gallery-item.loading::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg,
+                    #f0f0f0 25%,
+                    #e0e0e0 50%,
+                    #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -200% 0;
+            }
+
+            100% {
+                background-position: 200% 0;
+            }
+        }
+
+        .footer {
+            text-align: center;
+            padding: 60px 0;
+            border-top: 1px solid #e8e8e8;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .back-to-top {
+            display: inline-block;
+            margin-top: 20px;
+            color: #000;
+            text-decoration: none;
+            font-weight: 400;
+            transition: transform 0.2s ease;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Floating back to top button for mobile */
+        .floating-back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .floating-back-to-top:hover {
+            background: rgba(0, 0, 0, 0.9);
+            transform: translateY(-2px);
+        }
+
+        .floating-back-to-top:active {
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            .header {
+                padding: 50px 0 35px;
+                margin-bottom: 50px;
+            }
+
+            .header h1 {
+                font-size: 2.2rem;
+            }
+
             .gallery-row {
-                display: flex;
-                gap: 7px;
-                margin-bottom: 7px;
-                height: 400px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .header {
+                padding: 40px 0 30px;
+                margin-bottom: 40px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header p {
+                font-size: 1rem;
+            }
+
+            .footer {
+                padding: 40px 0;
+            }
+
+            .gallery-row {
+                display: block;
+                height: auto;
+                margin-bottom: 0;
+                gap: 0;
             }
 
             .gallery-item {
-                position: relative;
-                overflow: hidden;
-                cursor: pointer;
-                background: #f8f8f8;
-                transition: opacity 0.3s ease;
+                display: block;
+                width: 100% !important;
+                height: auto !important;
+                margin-bottom: 15px;
+                flex: none !important;
             }
 
-            .gallery-item:hover {
-                opacity: 0.85;
+            .gallery-row:last-child .gallery-item:last-child {
+                margin-bottom: 0;
             }
 
             .gallery-item img {
                 width: 100%;
-                height: 100%;
-                object-fit: cover;
-                display: block;
-                transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                height: auto;
+                object-fit: contain;
+                object-position: center;
             }
 
-            .gallery-item:hover img {
-                transform: scale(1.03);
-            }
-
-            .image-overlay {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                background: linear-gradient(transparent, rgba(0, 0, 0, 0.4));
-                color: white;
-                padding: 30px 20px 20px;
-                opacity: 0;
-                transition: opacity 0.3s ease;
-                font-size: 0.9rem;
-                font-weight: 300;
-            }
-
-            .gallery-item:hover .image-overlay {
+            .gallery-item:hover {
                 opacity: 1;
             }
 
-            .gallery-item.loading {
-                background: #f0f0f0;
-                animation: pulse 1.5s ease-in-out infinite;
+            .gallery-item:hover img {
+                transform: none;
             }
 
-            /* Skeleton loading animation */
-            @keyframes pulse {
-                0%,
-                100% {
-                    opacity: 1;
-                }
-                50% {
-                    opacity: 0.7;
-                }
+            .image-overlay {
+                display: none;
             }
 
-            /* Placeholder for images while loading */
-            .gallery-item.loading::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: linear-gradient(
-                    90deg,
-                    #f0f0f0 25%,
-                    #e0e0e0 50%,
-                    #f0f0f0 75%
-                );
-                background-size: 200% 100%;
-                animation: shimmer 1.5s infinite;
+            /* Show floating button on mobile */
+            .floating-back-to-top {
+                display: block;
             }
 
-            @keyframes shimmer {
-                0% {
-                    background-position: -200% 0;
-                }
-                100% {
-                    background-position: 200% 0;
-                }
+            /* Hide footer back to top on mobile */
+            .footer .back-to-top {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 12px;
+            }
+
+            .header {
+                padding: 30px 0 25px;
+                margin-bottom: 30px;
+            }
+
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .header p {
+                font-size: 0.95rem;
+            }
+
+            .contact-info {
+                font-size: 0.9rem;
+            }
+
+            .gallery-item {
+                margin-bottom: 12px;
             }
 
             .footer {
-                text-align: center;
-                padding: 60px 0;
-                border-top: 1px solid #e8e8e8;
-                font-size: 0.9rem;
-                color: #888;
+                padding: 30px 0;
+                font-size: 0.85rem;
             }
 
-            .back-to-top {
-                display: inline-block;
-                margin-top: 20px;
-                color: #000;
-                text-decoration: none;
-                font-weight: 400;
-                transition: transform 0.2s ease;
-            }
-
-            .back-to-top:hover {
-                transform: translateY(-2px);
-            }
-
-            /* Floating back to top button for mobile */
             .floating-back-to-top {
-                display: none;
-                position: fixed;
-                bottom: 20px;
-                right: 20px;
-                width: 50px;
-                height: 50px;
-                background: rgba(0, 0, 0, 0.8);
-                color: white;
-                border: none;
-                border-radius: 50%;
-                font-size: 20px;
-                cursor: pointer;
-                z-index: 1000;
-                transition: all 0.3s ease;
-                backdrop-filter: blur(10px);
-                -webkit-backdrop-filter: blur(10px);
+                bottom: 15px;
+                right: 15px;
+                width: 45px;
+                height: 45px;
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .container {
+                padding: 0 10px;
             }
 
-            .floating-back-to-top:hover {
-                background: rgba(0, 0, 0, 0.9);
-                transform: translateY(-2px);
+            .header h1 {
+                font-size: 1.6rem;
             }
 
-            .floating-back-to-top:active {
-                transform: translateY(0);
+            .header p {
+                font-size: 0.9rem;
             }
 
-            /* Responsive Design */
-            @media (max-width: 1024px) {
-                .container {
-                    padding: 0 16px;
-                }
-                .header {
-                    padding: 50px 0 35px;
-                    margin-bottom: 50px;
-                }
-                .header h1 {
-                    font-size: 2.2rem;
-                }
-                .gallery-row {
-                    height: 350px;
-                }
+            .contact-info {
+                font-size: 0.85rem;
             }
 
-            @media (max-width: 768px) {
-                .container {
-                    padding: 0 15px;
-                }
-                .header {
-                    padding: 40px 0 30px;
-                    margin-bottom: 40px;
-                }
-                .header h1 {
-                    font-size: 2rem;
-                }
-                .header p {
-                    font-size: 1rem;
-                }
-                .footer {
-                    padding: 40px 0;
-                }
-
-                .gallery-row {
-                    display: block;
-                    height: auto;
-                    margin-bottom: 0;
-                    gap: 0;
-                }
-
-                .gallery-item {
-                    display: block;
-                    width: 100% !important;
-                    height: auto !important;
-                    margin-bottom: 15px;
-                    flex: none !important;
-                }
-
-                .gallery-row:last-child .gallery-item:last-child {
-                    margin-bottom: 0;
-                }
-
-                .gallery-item img {
-                    width: 100%;
-                    height: auto;
-                    object-fit: contain;
-                    object-position: center;
-                }
-
-                .gallery-item:hover {
-                    opacity: 1;
-                }
-                .gallery-item:hover img {
-                    transform: none;
-                }
-                .image-overlay {
-                    display: none;
-                }
-
-                /* Show floating button on mobile */
-                .floating-back-to-top {
-                    display: block;
-                }
-
-                /* Hide footer back to top on mobile */
-                .footer .back-to-top {
-                    display: none;
-                }
+            .gallery-item {
+                margin-bottom: 10px;
             }
+        }
+    </style>
+</head>
 
-            @media (max-width: 480px) {
-                .container {
-                    padding: 0 12px;
-                }
-                .header {
-                    padding: 30px 0 25px;
-                    margin-bottom: 30px;
-                }
-                .header h1 {
-                    font-size: 1.8rem;
-                }
-                .header p {
-                    font-size: 0.95rem;
-                }
-                .contact-info {
-                    font-size: 0.9rem;
-                }
-                .gallery-item {
-                    margin-bottom: 12px;
-                }
-                .footer {
-                    padding: 30px 0;
-                    font-size: 0.85rem;
-                }
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Xiaohan Zhang</h1>
+            <p>Photographer, chef, digital marketer in Seattle, WA</p>
+            <div class="contact-info">
+                <a href="mailto:xiaohan.zhang14@gmail.com">xiaohan.zhang14@gmail.com</a>
+                |
+                <a href="https://www.instagram.com/justxiaohan/" target="_blank">@justxiaohan</a>
+            </div>
+        </header>
 
-                .floating-back-to-top {
-                    bottom: 15px;
-                    right: 15px;
-                    width: 45px;
-                    height: 45px;
-                    font-size: 18px;
-                }
-            }
+        <div class="gallery" id="gallery"></div>
 
-            @media (max-width: 360px) {
-                .container {
-                    padding: 0 10px;
-                }
-                .header h1 {
-                    font-size: 1.6rem;
-                }
-                .header p {
-                    font-size: 0.9rem;
-                }
-                .contact-info {
-                    font-size: 0.85rem;
-                }
-                .gallery-item {
-                    margin-bottom: 10px;
-                }
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <header class="header">
-                <h1>Xiaohan Zhang</h1>
-                <p>Photographer, chef, digital marketer in Seattle, WA</p>
-                <div class="contact-info">
-                    <a href="mailto:xiaohan.zhang14@gmail.com"
-                        >xiaohan.zhang14@gmail.com</a
-                    >
-                    |
-                    <a
-                        href="https://www.instagram.com/justxiaohan/"
-                        target="_blank"
-                        >@justxiaohan</a
-                    >
-                </div>
-            </header>
+        <footer class="footer">
+            <p>
+                Shot on Sony a7cii, Sony a6300, iPhone 12 mini, and iPhone
+                15 Pro
+            </p>
+            <a href="#" class="back-to-top">↑ Back to Top</a>
+        </footer>
+    </div>
 
-            <div class="gallery" id="gallery"></div>
+    <!-- Floating back to top button for mobile -->
+    <button class="floating-back-to-top" id="floatingBackToTop">↑</button>
 
-            <footer class="footer">
-                <p>
-                    Shot on Sony a7cii, Sony a6300, iPhone 12 mini, and iPhone
-                    15 Pro
-                </p>
-                <a href="#" class="back-to-top">↑ Back to Top</a>
-            </footer>
-        </div>
+    <script>
+        // Configuration
+        const TARGET_HEIGHT = 400;
+        const GAP = 7;
+        const ROW_PATTERN = [4, 2, 3, 4, 3];
 
-        <!-- Floating back to top button for mobile -->
-        <button class="floating-back-to-top" id="floatingBackToTop">↑</button>
+        // Updated IMAGES array with thumbnails for display and originals for PhotoSwipe
+        const IMAGES = [
+            {
+                src: "./thumbnails/image_1.jpeg",
+                fullSrc: "./images/image_1.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_2.jpeg",
+                fullSrc: "./images/image_2.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_3.jpeg",
+                fullSrc: "./images/image_3.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_4.jpeg",
+                fullSrc: "./images/image_4.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_5.jpeg",
+                fullSrc: "./images/image_5.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_6.jpeg",
+                fullSrc: "./images/image_6.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_7.jpeg",
+                fullSrc: "./images/image_7.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_8.jpeg",
+                fullSrc: "./images/image_8.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_9.jpeg",
+                fullSrc: "./images/image_9.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_10.jpeg",
+                fullSrc: "./images/image_10.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_11.jpeg",
+                fullSrc: "./images/image_11.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_12.jpeg",
+                fullSrc: "./images/image_12.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_13.jpeg",
+                fullSrc: "./images/image_13.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_14.jpeg",
+                fullSrc: "./images/image_14.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_15.jpeg",
+                fullSrc: "./images/image_15.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_16.jpeg",
+                fullSrc: "./images/image_16.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_17.jpeg",
+                fullSrc: "./images/image_17.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_18.jpeg",
+                fullSrc: "./images/image_18.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_19.jpeg",
+                fullSrc: "./images/image_19.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_20.jpeg",
+                fullSrc: "./images/image_20.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_21.jpeg",
+                fullSrc: "./images/image_21.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_22.jpeg",
+                fullSrc: "./images/image_22.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_23.jpeg",
+                fullSrc: "./images/image_23.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_24.jpeg",
+                fullSrc: "./images/image_24.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_25.jpeg",
+                fullSrc: "./images/image_25.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_26.jpeg",
+                fullSrc: "./images/image_26.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_27.jpeg",
+                fullSrc: "./images/image_27.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_28.jpeg",
+                fullSrc: "./images/image_28.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_29.jpeg",
+                fullSrc: "./images/image_29.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_30.jpeg",
+                fullSrc: "./images/image_30.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_31.jpeg",
+                fullSrc: "./images/image_31.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_32.jpeg",
+                fullSrc: "./images/image_32.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_33.jpeg",
+                fullSrc: "./images/image_33.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_34.jpeg",
+                fullSrc: "./images/image_34.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_35.jpeg",
+                fullSrc: "./images/image_35.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_36.jpeg",
+                fullSrc: "./images/image_36.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_37.jpeg",
+                fullSrc: "./images/image_37.jpeg",
+                alt: "",
+            },
+            {
+                src: "./thumbnails/image_38.jpeg",
+                fullSrc: "./images/image_38.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_39.jpeg",
+                fullSrc: "./images/image_39.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_40.jpeg",
+                fullSrc: "./images/image_40.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_41.jpeg",
+                fullSrc: "./images/image_41.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_42.jpeg",
+                fullSrc: "./images/image_42.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_43.jpeg",
+                fullSrc: "./images/image_43.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_44.jpeg",
+                fullSrc: "./images/image_44.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_45.jpeg",
+                fullSrc: "./images/image_45.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_46.jpeg",
+                fullSrc: "./images/image_46.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_47.jpeg",
+                fullSrc: "./images/image_47.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_48.jpeg",
+                fullSrc: "./images/image_48.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_49.jpeg",
+                fullSrc: "./images/image_49.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_50.jpeg",
+                fullSrc: "./images/image_50.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_51.jpeg",
+                fullSrc: "./images/image_51.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_52.jpeg",
+                fullSrc: "./images/image_52.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_53.jpeg",
+                fullSrc: "./images/image_53.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_54.jpeg",
+                fullSrc: "./images/image_54.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_55.jpeg",
+                fullSrc: "./images/image_55.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_56.jpeg",
+                fullSrc: "./images/image_56.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_57.jpeg",
+                fullSrc: "./images/image_57.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_58.jpeg",
+                fullSrc: "./images/image_58.jpeg",
+                alt: "",
+                title: "",
+            },
+        ];
 
-        <script>
-            // Configuration
-            const TARGET_HEIGHT = 400;
-            const GAP = 7;
-            const ROW_PATTERN = [4, 2, 3, 4, 3];
+        // Core Functions
+        function generateGallery() {
+            const gallery = document.getElementById("gallery");
+            let imageIndex = 0;
+            let patternIndex = 0;
 
-            // Updated IMAGES array with thumbnails for display and originals for PhotoSwipe
-            const IMAGES = [
-                {
-                    src: "./thumbnails/image_1.jpeg",
-                    fullSrc: "./images/image_1.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_2.jpeg",
-                    fullSrc: "./images/image_2.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_3.jpeg",
-                    fullSrc: "./images/image_3.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_4.jpeg",
-                    fullSrc: "./images/image_4.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_5.jpeg",
-                    fullSrc: "./images/image_5.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_6.jpeg",
-                    fullSrc: "./images/image_6.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_7.jpeg",
-                    fullSrc: "./images/image_7.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_8.jpeg",
-                    fullSrc: "./images/image_8.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_9.jpeg",
-                    fullSrc: "./images/image_9.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_10.jpeg",
-                    fullSrc: "./images/image_10.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_11.jpeg",
-                    fullSrc: "./images/image_11.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_12.jpeg",
-                    fullSrc: "./images/image_12.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_13.jpeg",
-                    fullSrc: "./images/image_13.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_14.jpeg",
-                    fullSrc: "./images/image_14.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_15.jpeg",
-                    fullSrc: "./images/image_15.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_16.jpeg",
-                    fullSrc: "./images/image_16.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_17.jpeg",
-                    fullSrc: "./images/image_17.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_18.jpeg",
-                    fullSrc: "./images/image_18.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_19.jpeg",
-                    fullSrc: "./images/image_19.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_20.jpeg",
-                    fullSrc: "./images/image_20.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_21.jpeg",
-                    fullSrc: "./images/image_21.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_22.jpeg",
-                    fullSrc: "./images/image_22.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_23.jpeg",
-                    fullSrc: "./images/image_23.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_24.jpeg",
-                    fullSrc: "./images/image_24.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_25.jpeg",
-                    fullSrc: "./images/image_25.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_26.jpeg",
-                    fullSrc: "./images/image_26.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_27.jpeg",
-                    fullSrc: "./images/image_27.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_28.jpeg",
-                    fullSrc: "./images/image_28.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_29.jpeg",
-                    fullSrc: "./images/image_29.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_30.jpeg",
-                    fullSrc: "./images/image_30.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_31.jpeg",
-                    fullSrc: "./images/image_31.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_32.jpeg",
-                    fullSrc: "./images/image_32.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_33.jpeg",
-                    fullSrc: "./images/image_33.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_34.jpeg",
-                    fullSrc: "./images/image_34.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_35.jpeg",
-                    fullSrc: "./images/image_35.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_36.jpeg",
-                    fullSrc: "./images/image_36.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_37.jpeg",
-                    fullSrc: "./images/image_37.jpeg",
-                    alt: "",
-                },
-                {
-                    src: "./thumbnails/image_38.jpeg",
-                    fullSrc: "./images/image_38.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_39.jpeg",
-                    fullSrc: "./images/image_39.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_40.jpeg",
-                    fullSrc: "./images/image_40.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_41.jpeg",
-                    fullSrc: "./images/image_41.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_42.jpeg",
-                    fullSrc: "./images/image_42.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_43.jpeg",
-                    fullSrc: "./images/image_43.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_44.jpeg",
-                    fullSrc: "./images/image_44.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_45.jpeg",
-                    fullSrc: "./images/image_45.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_46.jpeg",
-                    fullSrc: "./images/image_46.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_47.jpeg",
-                    fullSrc: "./images/image_47.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_48.jpeg",
-                    fullSrc: "./images/image_48.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_49.jpeg",
-                    fullSrc: "./images/image_49.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_50.jpeg",
-                    fullSrc: "./images/image_50.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_51.jpeg",
-                    fullSrc: "./images/image_51.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_52.jpeg",
-                    fullSrc: "./images/image_52.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_53.jpeg",
-                    fullSrc: "./images/image_53.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_54.jpeg",
-                    fullSrc: "./images/image_54.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_55.jpeg",
-                    fullSrc: "./images/image_55.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_56.jpeg",
-                    fullSrc: "./images/image_56.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_57.jpeg",
-                    fullSrc: "./images/image_57.jpeg",
-                    alt: "",
-                    title: "",
-                },
-                {
-                    src: "./thumbnails/image_58.jpeg",
-                    fullSrc: "./images/image_58.jpeg",
-                    alt: "",
-                    title: "",
-                },
-            ];
+            while (imageIndex < IMAGES.length) {
+                const imagesInThisRow =
+                    ROW_PATTERN[patternIndex % ROW_PATTERN.length];
+                const row = document.createElement("div");
+                row.className = "gallery-row";
 
-            // Core Functions
-            function generateGallery() {
-                const gallery = document.getElementById("gallery");
-                let imageIndex = 0;
-                let patternIndex = 0;
+                for (
+                    let i = 0;
+                    i < imagesInThisRow && imageIndex < IMAGES.length;
+                    i++
+                ) {
+                    const { src, fullSrc, alt, title } = IMAGES[imageIndex];
+                    const item = document.createElement("div");
+                    item.className = "gallery-item loading";
+                    item.dataset.pswpWidth = "1920";
+                    item.dataset.pswpHeight = "1080";
+                    item.dataset.fullSrc = fullSrc;
 
-                while (imageIndex < IMAGES.length) {
-                    const imagesInThisRow =
-                        ROW_PATTERN[patternIndex % ROW_PATTERN.length];
-                    const row = document.createElement("div");
-                    row.className = "gallery-row";
+                    // Add fetchpriority for above-the-fold images
+                    const fetchPriority = imageIndex < 4 ? "high" : "low";
+                    const loadingAttr = imageIndex < 6 ? "eager" : "lazy";
 
-                    for (
-                        let i = 0;
-                        i < imagesInThisRow && imageIndex < IMAGES.length;
-                        i++
-                    ) {
-                        const { src, fullSrc, alt, title } = IMAGES[imageIndex];
-                        const item = document.createElement("div");
-                        item.className = "gallery-item loading";
-                        item.dataset.pswpWidth = "1920";
-                        item.dataset.pswpHeight = "1080";
-                        item.dataset.fullSrc = fullSrc;
-
-                        // Add fetchpriority for above-the-fold images
-                        const fetchPriority = imageIndex < 4 ? "high" : "low";
-                        const loadingAttr = imageIndex < 6 ? "eager" : "lazy";
-
-                        item.innerHTML = `
+                    item.innerHTML = `
                                     <img src="${src}" alt="${alt}" loading="${loadingAttr}" fetchpriority="${fetchPriority}" />
                                     ${title ? `<div class="image-overlay">${title}</div>` : ""}
                                 `;
-                        row.appendChild(item);
-                        imageIndex++;
-                    }
-                    gallery.appendChild(row);
-                    patternIndex++;
+                    row.appendChild(item);
+                    imageIndex++;
                 }
+                gallery.appendChild(row);
+                patternIndex++;
             }
+        }
 
-            function loadImage(src) {
-                return new Promise((resolve, reject) => {
-                    const img = new Image();
-                    img.onload = () =>
-                        resolve({
-                            width: img.naturalWidth,
-                            height: img.naturalHeight,
-                            aspectRatio: img.naturalWidth / img.naturalHeight,
-                        });
-                    img.onerror = reject;
-                    img.src = src;
-                });
-            }
+        function loadImage(src) {
+            return new Promise((resolve, reject) => {
+                const img = new Image();
+                img.onload = () =>
+                    resolve({
+                        width: img.naturalWidth,
+                        height: img.naturalHeight,
+                        aspectRatio: img.naturalWidth / img.naturalHeight,
+                    });
+                img.onerror = reject;
+                img.src = src;
+            });
+        }
 
-            function calculateRowLayout(images, containerWidth) {
-                const totalAspectRatio = images.reduce(
-                    (sum, img) => sum + img.aspectRatio,
-                    0,
-                );
-                const availableWidth =
-                    containerWidth - GAP * (images.length - 1);
-                const calculatedHeight = availableWidth / totalAspectRatio;
-                const constrainedHeight = Math.max(
-                    TARGET_HEIGHT * 0.6,
-                    Math.min(TARGET_HEIGHT * 1.8, calculatedHeight),
-                );
-                const idealTotalWidth = images.reduce(
-                    (sum, img) => sum + img.aspectRatio * constrainedHeight,
-                    0,
-                );
-                const scaleFactor = availableWidth / idealTotalWidth;
-                const widths = images.map(
-                    (img) => img.aspectRatio * constrainedHeight * scaleFactor,
-                );
+        function calculateRowLayout(images, containerWidth) {
+            const totalAspectRatio = images.reduce(
+                (sum, img) => sum + img.aspectRatio,
+                0,
+            );
+            const availableWidth =
+                containerWidth - GAP * (images.length - 1);
+            const calculatedHeight = availableWidth / totalAspectRatio;
+            const constrainedHeight = Math.max(
+                TARGET_HEIGHT * 0.6,
+                Math.min(TARGET_HEIGHT * 1.8, calculatedHeight),
+            );
+            const idealTotalWidth = images.reduce(
+                (sum, img) => sum + img.aspectRatio * constrainedHeight,
+                0,
+            );
+            const scaleFactor = availableWidth / idealTotalWidth;
+            const widths = images.map(
+                (img) => img.aspectRatio * constrainedHeight * scaleFactor,
+            );
 
-                return { height: constrainedHeight, widths };
-            }
+            return { height: constrainedHeight, widths };
+        }
 
-            async function layoutRow(row) {
-                const items = Array.from(row.querySelectorAll(".gallery-item"));
-                const images = [];
+        async function layoutRow(row) {
+            const items = Array.from(row.querySelectorAll(".gallery-item"));
+            const images = [];
 
-                for (const item of items) {
-                    const img = item.querySelector("img");
-                    try {
-                        const dimensions = await loadImage(img.src);
-                        images.push(dimensions);
-                        item.dataset.pswpWidth = dimensions.width;
-                        item.dataset.pswpHeight = dimensions.height;
-                    } catch (error) {
-                        console.error("Failed to load image:", img.src);
-                        images.push({
-                            aspectRatio: 1.5,
-                            width: 1920,
-                            height: 1280,
-                        });
-                    }
-                    item.classList.remove("loading");
-                }
-
-                if (window.innerWidth > 768) {
-                    const layout = calculateRowLayout(images, row.offsetWidth);
-                    row.style.height = `${layout.height}px`;
-                    items.forEach((item, index) => {
-                        item.style.width = `${layout.widths[index]}px`;
-                        item.style.flex = "none";
+            for (const item of items) {
+                const img = item.querySelector("img");
+                try {
+                    const dimensions = await loadImage(img.src);
+                    images.push(dimensions);
+                    item.dataset.pswpWidth = dimensions.width;
+                    item.dataset.pswpHeight = dimensions.height;
+                } catch (error) {
+                    console.error("Failed to load image:", img.src);
+                    images.push({
+                        aspectRatio: 1.5,
+                        width: 1920,
+                        height: 1280,
                     });
                 }
+                item.classList.remove("loading");
             }
 
-            async function layoutGallery() {
-                const rows = Array.from(
-                    document.querySelectorAll(".gallery-row"),
-                );
+            if (window.innerWidth > 768) {
+                const layout = calculateRowLayout(images, row.offsetWidth);
+                row.style.height = `${layout.height}px`;
+                items.forEach((item, index) => {
+                    item.style.width = `${layout.widths[index]}px`;
+                    item.style.flex = "none";
+                });
+            }
+        }
 
-                // Process first row immediately for better LCP
-                if (rows.length > 0) {
-                    await layoutRow(rows[0]);
-                }
+        async function layoutGallery() {
+            const rows = Array.from(
+                document.querySelectorAll(".gallery-row"),
+            );
 
-                // Process remaining rows with slight delay to prioritize first row
-                for (let i = 1; i < rows.length; i++) {
-                    await layoutRow(rows[i]);
-                }
-
-                document.getElementById("gallery").classList.add("loaded");
+            // Process first row immediately for better LCP
+            if (rows.length > 0) {
+                await layoutRow(rows[0]);
             }
 
-            // Event Handlers
-            let resizeTimer;
-            function handleResize() {
-                clearTimeout(resizeTimer);
-                resizeTimer = setTimeout(() => {
-                    if (window.innerWidth > 768) layoutGallery();
-                }, 250);
+            // Process remaining rows with slight delay to prioritize first row
+            for (let i = 1; i < rows.length; i++) {
+                await layoutRow(rows[i]);
             }
 
-            // Simple lightbox functionality
-            function initSimpleLightbox() {
-                const galleryItems = document.querySelectorAll(".gallery-item");
+            document.getElementById("gallery").classList.add("loaded");
+        }
 
-                galleryItems.forEach((item) => {
-                    item.addEventListener("click", function () {
-                        const fullSrc = this.dataset.fullSrc;
+        // Event Handlers
+        let resizeTimer;
+        function handleResize() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                if (window.innerWidth > 768) layoutGallery();
+            }, 250);
+        }
 
-                        // Create lightbox overlay
-                        const lightbox = document.createElement("div");
-                        lightbox.style.cssText = `
+        // Simple lightbox functionality
+        function initSimpleLightbox() {
+            const galleryItems = document.querySelectorAll(".gallery-item");
+
+            galleryItems.forEach((item) => {
+                item.addEventListener("click", function () {
+                    const fullSrc = this.dataset.fullSrc;
+
+                    // Create lightbox overlay
+                    const lightbox = document.createElement("div");
+                    lightbox.style.cssText = `
                                     position: fixed;
                                     top: 0;
                                     left: 0;
@@ -955,75 +945,67 @@
                                     cursor: pointer;
                                 `;
 
-                        // Create image
-                        const lightboxImg = document.createElement("img");
-                        lightboxImg.src = fullSrc;
-                        lightboxImg.style.cssText = `
+                    // Create image
+                    const lightboxImg = document.createElement("img");
+                    lightboxImg.src = fullSrc;
+                    lightboxImg.style.cssText = `
                                     max-width: 90%;
                                     max-height: 90%;
                                     object-fit: contain;
                                 `;
 
-                        lightbox.appendChild(lightboxImg);
-                        document.body.appendChild(lightbox);
+                    lightbox.appendChild(lightboxImg);
+                    document.body.appendChild(lightbox);
 
-                        // Close on click
-                        lightbox.addEventListener("click", function () {
+                    // Close on click
+                    lightbox.addEventListener("click", function () {
+                        document.body.removeChild(lightbox);
+                    });
+
+                    // Close on escape key
+                    function handleEscape(e) {
+                        if (e.key === "Escape") {
                             document.body.removeChild(lightbox);
-                        });
-
-                        // Close on escape key
-                        function handleEscape(e) {
-                            if (e.key === "Escape") {
-                                document.body.removeChild(lightbox);
-                                document.removeEventListener(
-                                    "keydown",
-                                    handleEscape,
-                                );
-                            }
+                            document.removeEventListener(
+                                "keydown",
+                                handleEscape,
+                            );
                         }
-                        document.addEventListener("keydown", handleEscape);
-                    });
-                });
-            }
-
-            // Back to top functionality
-            function scrollToTop() {
-                window.scrollTo({ top: 0, behavior: "smooth" });
-            }
-            // Initialize
-            document.addEventListener("DOMContentLoaded", () => {
-                generateGallery();
-                layoutGallery();
-                initSimpleLightbox();
-                window.addEventListener("resize", handleResize);
-
-                // Desktop back to top link
-                document
-                    .querySelector(".back-to-top")
-                    .addEventListener("click", (e) => {
-                        e.preventDefault();
-                        window.scrollTo({ top: 0, behavior: "smooth" });
-                    });
-
-                // Mobile floating back to top button - THIS WAS MISSING!
-                document
-                    .getElementById("floatingBackToTop")
-                    .addEventListener("click", () => {
-                        window.scrollTo({ top: 0, behavior: "smooth" });
-                    });
-
-                document.addEventListener("keydown", (e) => {
-                    if (e.key === "g" && !e.target.matches("input, textarea")) {
-                        e.preventDefault();
-                        document
-                            .querySelector(".gallery")
-                            .scrollIntoView({ behavior: "smooth" });
                     }
+                    document.addEventListener("keydown", handleEscape);
                 });
             });
+        }
 
-            console.log('Gallery loaded • Press "g" to jump to gallery');
-        </script>
-    </body>
+        // Back to top functionality
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+        // Initialize
+        document.addEventListener("DOMContentLoaded", () => {
+            generateGallery();
+            layoutGallery();
+            initSimpleLightbox();
+            window.addEventListener("resize", handleResize);
+
+            // Desktop back to top link
+            document
+                .querySelector(".back-to-top")
+                .addEventListener("click", (e) => {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                });
+
+            // Mobile floating back to top button - THIS WAS MISSING!
+            document
+                .getElementById("floatingBackToTop")
+                .addEventListener("click", () => {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                });
+
+
+        });
+    </script>
+</body>
+
 </html>
