@@ -997,10 +997,6 @@
             });
         }
 
-        // Back to top functionality
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        }
         // Initialize
         document.addEventListener("DOMContentLoaded", () => {
             generateGallery();
@@ -1016,7 +1012,7 @@
                     window.scrollTo({ top: 0, behavior: "smooth" });
                 });
 
-            // Mobile floating back to top button - THIS WAS MISSING!
+            // Mobile floating back to top button
             document
                 .getElementById("floatingBackToTop")
                 .addEventListener("click", () => {
