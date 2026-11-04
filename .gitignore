@@ -1,3 +1,9 @@
 _site
 .sass-cache
 .jekyll-metadata
+
+# macOS system files
+.DS_Store
+
+# Backup directories
+backup-before-reorder/

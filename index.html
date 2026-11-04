@@ -456,7 +456,7 @@
         // Configuration
         const TARGET_HEIGHT = 400;
         const GAP = 7;
-        const ROW_PATTERN = [4, 2, 3, 4, 3];
+        const ROW_PATTERN = [3, 2, 4, 3, 4];
 
         // IMAGES array with thumbnails for display and full-res for lightbox
         const IMAGES = [
@@ -560,6 +560,7 @@
                 src: "./thumbnails/image_17.jpeg",
                 fullSrc: "./images/image_17.jpeg",
                 alt: "",
+                title: "",
             },
             {
                 src: "./thumbnails/image_18.jpeg",
@@ -685,6 +686,7 @@
                 src: "./thumbnails/image_38.jpeg",
                 fullSrc: "./images/image_38.jpeg",
                 alt: "",
+                title: "",
             },
             {
                 src: "./thumbnails/image_39.jpeg",
@@ -806,6 +808,126 @@
                 alt: "",
                 title: "",
             },
+            {
+                src: "./thumbnails/image_59.jpeg",
+                fullSrc: "./images/image_59.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_60.jpeg",
+                fullSrc: "./images/image_60.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_61.jpeg",
+                fullSrc: "./images/image_61.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_62.jpeg",
+                fullSrc: "./images/image_62.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_63.jpeg",
+                fullSrc: "./images/image_63.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_64.jpeg",
+                fullSrc: "./images/image_64.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_65.jpeg",
+                fullSrc: "./images/image_65.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_66.jpeg",
+                fullSrc: "./images/image_66.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_67.jpeg",
+                fullSrc: "./images/image_67.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_68.jpeg",
+                fullSrc: "./images/image_68.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_69.jpeg",
+                fullSrc: "./images/image_69.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_70.jpeg",
+                fullSrc: "./images/image_70.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_71.jpeg",
+                fullSrc: "./images/image_71.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_72.jpeg",
+                fullSrc: "./images/image_72.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_73.jpeg",
+                fullSrc: "./images/image_73.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_74.jpeg",
+                fullSrc: "./images/image_74.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_75.jpeg",
+                fullSrc: "./images/image_75.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_76.jpeg",
+                fullSrc: "./images/image_76.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_77.jpeg",
+                fullSrc: "./images/image_77.jpeg",
+                alt: "",
+                title: "",
+            },
+            {
+                src: "./thumbnails/image_78.jpeg",
+                fullSrc: "./images/image_78.jpeg",
+                alt: "",
+                title: "",
+            }
         ];
 
         // Core Functions
@@ -820,6 +942,7 @@
                 const row = document.createElement("div");
                 row.className = "gallery-row";
 
+                const startIndex = imageIndex;
                 for (
                     let i = 0;
                     i < imagesInThisRow && imageIndex < IMAGES.length;
@@ -841,6 +964,13 @@
                     row.appendChild(item);
                     imageIndex++;
                 }
+                
+                // Mark incomplete rows (last row with fewer images than expected)
+                const actualImagesInRow = imageIndex - startIndex;
+                if (actualImagesInRow < imagesInThisRow) {
+                    row.classList.add("incomplete-row");
+                }
+                
                 gallery.appendChild(row);
                 patternIndex++;
             }
@@ -905,12 +1035,22 @@
             }
 
             if (window.innerWidth > 768) {
-                const layout = calculateRowLayout(images, row.offsetWidth);
-                row.style.height = `${layout.height}px`;
-                items.forEach((item, index) => {
-                    item.style.width = `${layout.widths[index]}px`;
-                    item.style.flex = "none";
-                });
+                // Don't stretch incomplete rows - use natural sizing
+                if (row.classList.contains("incomplete-row")) {
+                    row.style.height = "auto";
+                    items.forEach((item) => {
+                        item.style.width = "auto";
+                        item.style.flex = "0 0 auto";
+                        item.style.maxWidth = "400px"; // Limit max width to match TARGET_HEIGHT
+                    });
+                } else {
+                    const layout = calculateRowLayout(images, row.offsetWidth);
+                    row.style.height = `${layout.height}px`;
+                    items.forEach((item, index) => {
+                        item.style.width = `${layout.widths[index]}px`;
+                        item.style.flex = "none";
+                    });
+                }
             }
         }
 
