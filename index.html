@@ -13,14 +13,6 @@
     <!-- Preconnect to external domains for faster loading -->
     <link rel="preconnect" href="https://www.googletagmanager.com" />
 
-    <!-- Preload critical images -->
-    <link rel="preload" href="./thumbnails/image_1.jpeg" as="image" fetchpriority="high" />
-    <link rel="preload" href="./thumbnails/image_2.jpeg" as="image" fetchpriority="high" />
-    <link rel="preload" href="./thumbnails/image_3.jpeg" as="image" fetchpriority="high" />
-    <link rel="preload" href="./thumbnails/image_4.jpeg" as="image" fetchpriority="high" />
-    <link rel="preload" href="./thumbnails/image_5.jpeg" as="image" fetchpriority="high" />
-    <link rel="preload" href="./thumbnails/image_6.jpeg" as="image" fetchpriority="high" />
-
     <!-- Google tag (gtag.js) - moved to end of head for better performance -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q9KSP1VH2F"></script>
     <script>
@@ -964,13 +956,13 @@
                     row.appendChild(item);
                     imageIndex++;
                 }
-                
+
                 // Mark incomplete rows (last row with fewer images than expected)
                 const actualImagesInRow = imageIndex - startIndex;
                 if (actualImagesInRow < imagesInThisRow) {
                     row.classList.add("incomplete-row");
                 }
-                
+
                 gallery.appendChild(row);
                 patternIndex++;
             }
